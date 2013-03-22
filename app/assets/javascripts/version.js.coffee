@@ -1,7 +1,7 @@
 class Version
   @document_ready: ->
     $('#form').on('click', 'a[data-clear-form]', Version.clear_form)
-    $('body').on('click', 'td', Version.get_seat_id)
+    $('body').on('click', '.seat_column', Version.get_seat_id)
 
   @clear_form: (e) ->
     e.preventDefault()

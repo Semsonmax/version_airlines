@@ -3,11 +3,6 @@
   .large-12.large-centered.spacer
 
 .row
-  .large-12
-    - @voyage.seats.each do |seat|
-      %br= seat.row seat.column
-
-.row
-  .large-10.large-centered.columns
+  .large-12.large-centered.columns
     #chart
       = render :partial => 'seatchart'
