@@ -20,6 +20,10 @@ describe Booking do
     end
 
     it 'does not get created if seat field missing' do
+      # traveler = FactoryGirl.create(:traveler)
+      # voyage = FactoryGirl.create(:voyage)
+      # Booking.create(voyage => voyage, traveler => traveler )
+      # expect(booking.id).to be nil
     end
   end
 end
