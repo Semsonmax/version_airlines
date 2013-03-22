@@ -14,5 +14,3 @@ class Version
     console.log('Column is '+column)
 
 $(document).ready(Version.document_ready)
-
-
