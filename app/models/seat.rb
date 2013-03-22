@@ -3,7 +3,6 @@
 # Table name: seats
 #
 #  id          :integer          not null, primary key
-#  booking_id  :integer
 #  zeppelin_id :integer
 #  row         :integer
 #  column      :integer
@@ -14,4 +13,6 @@
 class Seat < ActiveRecord::Base
   attr_accessible :row, :column, :zeppelin_id
   has_many :bookings
+  has_many :voyages, :through => :bookings
+  has_many :travelers, :through => :bookings
 end

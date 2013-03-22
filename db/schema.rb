@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20130322150342) do
   end
 
   create_table "seats", :force => true do |t|
-    t.integer  "booking_id"
     t.integer  "zeppelin_id"
     t.integer  "row"
     t.integer  "column"

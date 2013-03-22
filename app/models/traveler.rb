@@ -13,4 +13,7 @@
 class Traveler < ActiveRecord::Base
   attr_accessible :name, :email
   has_many :bookings
+  has_many :seats, :through => :bookings
+  has_many :flights, :through => :bookings
+
 end
