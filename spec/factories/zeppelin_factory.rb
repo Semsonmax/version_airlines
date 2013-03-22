@@ -8,7 +8,6 @@
 #  number_of_columns :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  name              :string(255)
 #
 
 FactoryGirl.define do
@@ -16,5 +15,6 @@ FactoryGirl.define do
     style                 'LZ129'
     number_of_rows        3
     number_of_columns     24
+
   end
 end

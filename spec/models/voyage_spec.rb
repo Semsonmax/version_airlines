@@ -18,7 +18,6 @@ require 'spec_helper'
 describe Voyage do
   let(:voy) {FactoryGirl.create(:voyage)}
   let(:trvlr) {FactoryGirl.create(:traveler)}
-  let(:seat) {FactoryGirl.create(:seat)}
   let(:zep) {FactoryGirl.create(:zeppelin)}
   describe '.create' do
     it 'is a Voyage object' do
@@ -39,8 +38,12 @@ describe Voyage do
     it 'has many travelers through bookings' do
       zep.create_seats
       seat = Seat.last
-      booking = Booking.create(:traveler=>trvlr,:seat=>seat, :voyage=>voy)
-      expect(voy.bookings.first).to eq book
+      booking = Booking.new
+      booking.seat = seat
+      booking.traveler = trvlr
+      booking.voyage = voy
+      booking.save
+      expect(voy.bookings.first).to eq booking
     end
   end
 end
