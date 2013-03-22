@@ -3,7 +3,6 @@ class VoyagesController < ApplicationController
     @voyage = Voyage.new
   end
   def new
-    binding.pry
     @voyage = Voyage.new
   end
 end
