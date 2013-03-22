@@ -3,7 +3,7 @@
 
 .row
   .large-10.large-centered.columns
-    = link_to('New Voyage', '#', :class => 'button small success radius', :id=>'new_voyage')
+    = link_to('New Voyage', new_voyage_path, :class => 'button small success radius', :id=>'new_voyage', :remote=>true)
 
 #form
   = render :partial => 'form'
