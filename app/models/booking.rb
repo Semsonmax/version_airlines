@@ -11,7 +11,7 @@
 #
 
 class Booking < ActiveRecord::Base
-  attr_accessible :traveler_id, :seat_id, :voyage_id, :traveler, :voyage, :seat
+  attr_accessible :traveler_id, :seat_id, :voyage_id
   belongs_to :seat
   belongs_to :voyage
   belongs_to :traveler

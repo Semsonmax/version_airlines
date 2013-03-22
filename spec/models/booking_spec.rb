@@ -20,7 +20,7 @@ describe Booking do
       voyage = FactoryGirl.create(:voyage)
       zeppelin.create_seats
       seat = Seat.first
-      booking = Booking.create(:traveler => traveler, :voyage => voyage, :seat =>seat)
+      booking = Booking.create(:traveler_id => traveler.id, :voyage_id => voyage.id, :seat_id =>seat.id)
       expect(booking).to be_an_instance_of(Booking)
     end
 
