@@ -3,6 +3,8 @@ VersionAirlines::Application.routes.draw do
 
  resources :zeppelins, :only => [:index]
  resources :voyages, :only => [:index, :show]
-
+ get '/login' =>'session#new'
+ post '/login' => 'session#create'
+ delete '/login' => 'session#destroy'
 
 end
