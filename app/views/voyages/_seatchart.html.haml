@@ -1,1 +1,12 @@
 %h3 ***seating chart here***
+
+.row
+  .large-12
+    %table
+      - @voyage.zeppelin.number_of_rows.times do
+        - j = 1
+        %tr
+          - @voyage.zeppelin.seats.where(row: j).each do |seat|
+            %td{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
+              = "row = #{seat.row} col = #{seat.column}"
+            - j += 1
