@@ -11,10 +11,12 @@ class SessionController < ApplicationController
     else
       session[:traveler_id] = nil
     end
+    authenticate
   end
 
   def destroy
     session[:traveler_id] = nil
+    authenticate
   end
 
 end
