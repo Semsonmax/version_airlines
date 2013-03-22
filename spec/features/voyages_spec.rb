@@ -3,6 +3,9 @@ require 'features/shared/login_helper'
 include LoginHelper
 
 describe 'Voyages' do
+  #let(:admin) {FactoryGirl.create(:admin_traveler)}
+  let(:voyage) {FactoryGirl.create(:voyage)}
+  let(:zep) {FactoryGirl.create(:zeppelin)}
   before(:each) do
     visit root_path
     admin = FactoryGirl.create(:admin_traveler)
@@ -24,5 +27,20 @@ describe 'Voyages' do
     end
   end
 
+  describe 'GET /voyages/create' do
+    it 'creates a Voyage in the db', :js=>true do
+      click_link('Voyages')
+      click_link('New Voyage')
+      fill_in('Code', :with=>voyage.code)
+      fill_in('voyage_airfield_depart', :with=>voyage.airfield_depart)
+      fill_in('voyage_airfield_arrive', :with=>voyage.airfield_arrive)
+      fill_in('voyage_voyage_date', :with=>voyage.voyage_date)
+      select(zeppelin.name, :from=>'zeppelins')
+      click_button('Create Voyage')
+      expect(voyage.id).to_not eq nil
+    end
+  end
+
 
 end
+

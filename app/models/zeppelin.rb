@@ -36,4 +36,9 @@ class Zeppelin < ActiveRecord::Base
     end
     j = 1
   end
+
+  def self.names
+    Zeppelin.all.map(&:style).sort
+  end
+
 end

@@ -6,5 +6,6 @@ class VoyagesController < ApplicationController
   end
   def new
     @voyage = Voyage.new
+    @zeppelins = Zeppelin.all
   end
 end

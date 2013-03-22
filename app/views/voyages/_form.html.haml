@@ -14,6 +14,9 @@
       = f.label       :voyage_date
       = f.text_field  :voyage_date
 
+      = f.label         :zeppelins
+      = f.select        :zeppelin_id, options_for_select(Zeppelin.names)
+
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = f.submit
 
