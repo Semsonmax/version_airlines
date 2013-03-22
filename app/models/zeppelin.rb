@@ -8,12 +8,14 @@
 #  number_of_columns :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  name              :string(255)
 #
 
 class Zeppelin < ActiveRecord::Base
   attr_accessible :style, :number_of_rows, :number_of_columns
   has_many :seats, :inverse_of => :zeppelin
   has_many :voyages, :inverse_of => :zeppelin
+  validates :number_of_rows, :number_of_columns, :presence => true
 
   def total_seats
     self.number_of_rows * self.number_of_columns
