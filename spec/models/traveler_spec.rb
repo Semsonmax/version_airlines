@@ -14,9 +14,9 @@
 require 'spec_helper'
 
 describe Traveler do
-  traveler = FactoryGirl.create(:traveler)
-  zeppelin = FactoryGirl.create(:zeppelin)
-  voyage = FactoryGirl.create(:voyage)
+  let(:voyage) {FactoryGirl.create(:voyage)}
+  let(:traveler) {FactoryGirl.create(:traveler)}
+  let(:zeppelin) {FactoryGirl.create(:zeppelin)}
 
   describe '.new' do
     it 'creates an instance of a traveler' do
@@ -37,13 +37,39 @@ describe Traveler do
   end
 
   describe '#bookings' do
-    it 'has an array of Bookings objects' do
+    it 'has an array of Booking objects' do
       zeppelin.create_seats
       seat = Seat.first
-      booking = Booking.create(:traveler_id => traveler.id, :voyage_id => voyage.id, :seat_id =>seat.id)
+      booking = Booking.create(:traveler_id => traveler.id, :voyage_id => voyage.id, :seat_id => seat.id)
       expect(booking).to be_an_instance_of(Booking)
       traveler.bookings << booking
       expect(traveler.bookings.first).to eq booking
+    end
+  end
+
+  describe '#voyages' do
+    it 'has many voyages through bookings' do
+      zeppelin.create_seats
+      seat = Seat.last
+      booking = Booking.new
+      booking.seat = seat
+      booking.traveler = traveler
+      booking.voyage = voyage
+      booking.save
+      expect(traveler.voyages.first).to eq voyage
+    end
+  end
+
+  describe '#seats' do
+    it 'has many seats through bookings' do
+      zeppelin.create_seats
+      seat = Seat.last
+      booking = Booking.new
+      booking.seat = seat
+      booking.traveler = traveler
+      booking.voyage = voyage
+      booking.save
+      expect(traveler.seats.first).to eq seat
     end
   end
 end
