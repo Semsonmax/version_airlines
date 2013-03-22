@@ -3,7 +3,6 @@
 # Table name: seats
 #
 #  id          :integer          not null, primary key
-#  booking_id  :integer
 #  zeppelin_id :integer
 #  row         :integer
 #  column      :integer
