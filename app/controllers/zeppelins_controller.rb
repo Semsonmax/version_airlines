@@ -3,5 +3,9 @@ class ZeppelinsController < ApplicationController
     @zeppelins = Zeppelin.all
   end
 
+  def new
+    @zeppelin = Zeppelin.new
+  end
+
 
 end

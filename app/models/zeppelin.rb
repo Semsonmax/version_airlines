@@ -12,7 +12,7 @@
 #
 
 class Zeppelin < ActiveRecord::Base
-  attr_accessible :style, :number_of_rows, :number_of_columns
+  attr_accessible :name, :style, :number_of_rows, :number_of_columns
   has_many :seats, :inverse_of => :zeppelin
   has_many :voyages, :inverse_of => :zeppelin
   validates :number_of_rows, :number_of_columns, :presence => true

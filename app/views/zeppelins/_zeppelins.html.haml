@@ -2,3 +2,6 @@
   .large-10.large-centered.columns
     #zeppelins
       %h3.green ***index zeppelin show diagrams***
+      %ul
+        - @zeppelins.each do |zeppelin|
+          %li= zeppelin.name
