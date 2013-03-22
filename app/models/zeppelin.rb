@@ -20,7 +20,7 @@ class Zeppelin < ActiveRecord::Base
   end
 
   def create_seats
-    total_seats = self.zeppelin.total_seats
+    total_seats = self.total_seats
     j = 1
     k = 1
     self.number_of_rows.times do
