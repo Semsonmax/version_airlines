@@ -14,10 +14,9 @@
 require 'spec_helper'
 
 describe Traveler do
-  let(:traveler) { Traveler.create(name: 'ferdinand', email: 'ferdinand@gmail.com', password: 'a', password_confirmation: 'a') }
-  let(:voyage) { Voyage.create(:code=>'101',:airfield_depart=>'NYC',:airfield_arrive=>'LON',:voyage_date=>'4/11/2011') }
-  let(:seat) { Seat.create(:row => 2, :column => 2) }
-  let(:booking) { Booking.create(:traveler => traveler, :voyage => voyage, :seat => seat) }
+  traveler = FactoryGirl.create(:traveler)
+  zeppelin = FactoryGirl.create(:zeppelin)
+  voyage = FactoryGirl.create(:voyage)
 
   describe '.new' do
     it 'creates an instance of a traveler' do
@@ -39,6 +38,10 @@ describe Traveler do
 
   describe '#bookings' do
     it 'has an array of Bookings objects' do
+      zeppelin.create_seats
+      seat = Seat.first
+      booking = Booking.create(:traveler_id => traveler.id, :voyage_id => voyage.id, :seat_id =>seat.id)
+      expect(booking).to be_an_instance_of(Booking)
       traveler.bookings << booking
       expect(traveler.bookings.first).to eq booking
     end
