@@ -14,6 +14,10 @@
 require 'spec_helper'
 
 describe Traveler do
+  traveler = FactoryGirl.create(:traveler)
+  zeppelin = FactoryGirl.create(:zeppelin)
+  voyage = FactoryGirl.create(:voyage)
+
   describe '.new' do
     it 'creates an instance of a traveler' do
       traveler = Traveler.new
@@ -29,6 +33,17 @@ describe Traveler do
     it 'fails validation' do
       traveler = Traveler.create
       expect(traveler.id).to be nil
+    end
+  end
+
+  describe '#bookings' do
+    it 'has an array of Bookings objects' do
+      zeppelin.create_seats
+      seat = Seat.first
+      booking = Booking.create(:traveler_id => traveler.id, :voyage_id => voyage.id, :seat_id =>seat.id)
+      expect(booking).to be_an_instance_of(Booking)
+      traveler.bookings << booking
+      expect(traveler.bookings.first).to eq booking
     end
   end
 end
