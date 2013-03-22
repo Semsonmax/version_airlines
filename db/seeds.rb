@@ -21,8 +21,8 @@ v3.zeppelin = z2
 v3.save
 
 t1 = Traveler.create(name: 'Winthrop', email: 'winthrop@gmail.com', password: 'a', password_confirmation: 'a')
-t2 = Traveler.create(name: 'Reginald', email: 'reginald@gmail.com', password: 'a', password_confirmation: 'a')
-t3 = Traveler.create(name: 'Bartholomew', email: 'bartholomew@gmail.com', password: 'a', password_confirmation: 'a')
+t2 = Traveler.create(name: 'Reginald', email: 'reg@gmail.com', password: 'a', password_confirmation: 'a')
+t3 = Traveler.create(name: 'Bartholomew', email: 'bart@gmail.com', password: 'a', password_confirmation: 'a')
 
 a1 = Traveler.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a')
 a1.is_admin = true
