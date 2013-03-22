@@ -1,6 +1,6 @@
-class AddAirplanesTable < ActiveRecord::Migration
+class AddZeppelinsTable < ActiveRecord::Migration
   def change
-    create_table :airplanes do |t|
+    create_table :zeppelins do |t|
       t.string :style
       t.integer :number_of_rows
       t.integer :number_of_columns
