@@ -28,6 +28,7 @@ describe 'Session' do
 
   describe 'POST /login' do
     let(:traveler) {FactoryGirl.create(:traveler)}
+    let(:admin_traveler) {FactoryGirl.create(:admin_traveler)}
 
     it 'logs the traveler into the system if credentials are correct', :js => true do
       login_to_system(traveler)
@@ -39,6 +40,24 @@ describe 'Session' do
       page.should_not have_link('Login')
       page.should_not have_link('Register')
       page.should have_link('Logout')
+    end
+
+    it 'logs the admin into the system as an admin if credentials are correct', :js => true do
+      login_to_system(admin_traveler)
+      page.should have_link('Zeppelins')
+      page.should have_link('Voyages')
+      visit root_path
+      page.should have_link('Zeppelins')
+      page.should have_link('Voyages')
+    end
+
+    it 'logs the traveler into the system as a traveler if credentials are correct', :js => true do
+      login_to_system(traveler)
+      page.should have_link('My Voyages')
+      page.should have_link('Find Voyages')
+      visit root_path
+      page.should have_link('My Voyages')
+      page.should have_link('Find Voyages')
     end
 
     it 'does not log the traveler into the system if credentials are incorrect', :js => true do
@@ -57,11 +76,11 @@ describe 'Session' do
       traveler = FactoryGirl.create(:traveler)
       login_to_system(traveler)
       click_link('Logout')
-      expect(page.has_link?('Logout')).to be false
+      page.should_not have_link('Logout')
       page.should have_link('Register')
       page.should have_link('Login')
       visit root_path
-      expect(page.has_link?('Logout')).to be false
+      page.should_not have_link('Logout')
       page.should have_link('Register')
       page.should have_link('Login')
     end

@@ -20,7 +20,7 @@ FactoryGirl.define do
   end
 
   factory :admin_traveler, class: Traveler do
-    username              'admin'
+    name                  'admin'
     email                 'admin@gmail.com'
     password              'a'
     password_confirmation 'a'
