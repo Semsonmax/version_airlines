@@ -15,7 +15,7 @@ class Traveler < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_many :bookings
   has_many :seats, :through => :bookings
-  has_many :flights, :through => :bookings
+  has_many :voyages, :through => :bookings
 
   has_secure_password
 
