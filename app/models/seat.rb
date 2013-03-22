@@ -13,4 +13,8 @@
 class Seat < ActiveRecord::Base
   attr_accessible :row, :column, :zeppelin_id
   has_many :bookings
+  has_many :voyages, :through => :bookings
+  has_many :travelers, :through => :bookings
+
+  validates :zeppelin_id, :presence => true
 end
