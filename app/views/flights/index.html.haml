@@ -1,0 +1,12 @@
+.row
+  .large-12.large-centered.spacer
+
+.row
+  .large-10.large-centered.columns
+    = link_to('New Flight', '#', :class => 'button small success radius')
+
+#form
+  = render :partial => 'form'
+
+#flights
+  = render :partial => 'flights'
