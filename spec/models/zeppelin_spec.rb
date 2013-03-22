@@ -2,9 +2,9 @@ require 'spec_helper'
 
 
 describe Zeppelin do
+  let(:zep) {Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)}
 
   describe '.new' do
-    let(:zep) {Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)}
 
     it 'creates a Zeppelin object' do
       zep = Zeppelin.new(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
