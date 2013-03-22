@@ -8,6 +8,7 @@
 #  number_of_columns :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  name              :string(255)
 #
 
 class Zeppelin < ActiveRecord::Base
