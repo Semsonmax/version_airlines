@@ -1,7 +1,9 @@
 .row
   .large-10.large-centered.columns
     #zeppelins
-      %h3.green ***index zeppelin show diagrams***
+      %h3.green Our zeppelin fleet
       %ul
         - @zeppelins.each do |zeppelin|
           %li= zeppelin.name
+
+        / this is where we through in mini graphic of seats
