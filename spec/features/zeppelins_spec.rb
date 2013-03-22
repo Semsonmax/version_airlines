@@ -1,11 +1,14 @@
 require 'spec_helper'
+require 'features/shared/login_helper'
+include LoginHelper
 
 describe Zeppelin do
 
   describe 'GET /zeppelins' do
-    it 'displays a zeppelins in the list', :js => true do
+    it 'displays a zeppelin in the list', :js => true do
       zeppelin = FactoryGirl.create(:zeppelin)
       traveler = FactoryGirl.create(:traveler)
+      visit root_path
       login_to_system(traveler)
       visit zeppelins_path
       page.has_content?('The Lord Grantham')
