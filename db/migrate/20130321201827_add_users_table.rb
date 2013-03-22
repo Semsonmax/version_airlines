@@ -4,7 +4,7 @@ class AddUsersTable < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.integer :seat_id
-      t.boolean :is_admin
+      t.boolean :is_admin, :default => false
       t.timestamps
     end
   end
