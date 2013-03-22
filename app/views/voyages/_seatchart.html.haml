@@ -8,6 +8,6 @@
         .seat_row
           - @voyage.zeppelin.seats.where(row: j).each do |seat|
             .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
-              = "row = #{seat.row} col = #{seat.column}"
+              .seat_numbers= "#{seat.row} - #{seat.column}"
             - j += 1
           .clear

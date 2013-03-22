@@ -1,0 +1,5 @@
+<% if @traveler.valid? %>
+  $('#form').empty();
+<% else %>
+  $('#form').empty().append('<%=j render(:partial => 'form') %>');
+<% end %>
