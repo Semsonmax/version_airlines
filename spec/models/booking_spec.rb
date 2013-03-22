@@ -13,17 +13,25 @@
 require 'spec_helper'
 
 describe Booking do
-  describe '.new' do
-    it 'creats an instance of a seat' do
-      booking = Booking.new
+  describe '.create' do
+    it 'creates an instance of a booking' do
+      traveler = FactoryGirl.create(:traveler)
+      zeppelin = FactoryGirl.create(:zeppelin)
+      voyage = FactoryGirl.create(:voyage)
+      zeppelin.create_seats
+      seat = Seat.first
+      booking = Booking.create(:traveler => traveler, :voyage => voyage, :seat =>seat)
       expect(booking).to be_an_instance_of(Booking)
     end
 
     it 'does not get created if seat field missing' do
-      # traveler = FactoryGirl.create(:traveler)
-      # voyage = FactoryGirl.create(:voyage)
-      # Booking.create(voyage => voyage, traveler => traveler )
-      # expect(booking.id).to be nil
+      traveler = FactoryGirl.create(:traveler)
+      voyage = FactoryGirl.create(:voyage)
+      booking = Booking.new
+      booking.voyage = voyage
+      booking.traveler = traveler
+      booking.save
+      expect(booking.id).to be nil
     end
   end
 end
