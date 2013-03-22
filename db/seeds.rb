@@ -4,6 +4,7 @@ Seat.delete_all
 Zeppelin.delete_all
 
 z1 = Zeppelin.create(style: '777', number_of_rows: 3, number_of_columns: 3)
+z1.create_seats
 v1 = Voyage.create
 v2 = Voyage.create
 v1.zeppelin = z1
