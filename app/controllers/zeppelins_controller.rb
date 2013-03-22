@@ -1,6 +1,6 @@
 class ZeppelinsController < ApplicationController
   def index
-    # @zeppelins = Zeppelin.all
+    @zeppelins = Zeppelin.all
   end
 
 

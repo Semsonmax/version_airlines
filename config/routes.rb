@@ -1,12 +1,13 @@
 VersionAirlines::Application.routes.draw do
  root :to => 'welcome#index'
 
- resources :zeppelins, :only => [:index]
- resources :voyages, :only => [:index, :show]
+ resources :zeppelins, :only => [:index, :show, :new, :create]
+ resources :voyages, :only => [:index, :show, :new, :create]
+ resources :travelers, :only => [:new, :create]
+
 
  get '/login' =>'session#new'
  post '/login' => 'session#create'
  delete '/login' => 'session#destroy'
 
- resources :travelers, :only => [:new, :create]
 end
