@@ -7,6 +7,7 @@ describe 'Session' do
     it 'displays login link' do
       visit root_path
       page.should have_link('Login')
+      page.should have_link('Register')
     end
 
     it 'displays login form', :js => true do
@@ -32,11 +33,14 @@ describe 'Session' do
       login_to_system(traveler)
       page.should_not have_button('Start')
       page.should_not have_link('Login')
+      page.should_not have_link('Register')
       page.should have_link('Logout')
       visit root_path
       page.should_not have_link('Login')
+      page.should_not have_link('Register')
       page.should have_link('Logout')
     end
+
     it 'does not log the traveler into the system if credentials are incorrect', :js => true do
       visit root_path
       click_link('Login')
@@ -45,6 +49,7 @@ describe 'Session' do
       click_button('Start')
       page.should have_button('Start')
     end
+
   end
 
   describe 'DELETE /login' do
@@ -53,9 +58,11 @@ describe 'Session' do
       login_to_system(traveler)
       click_link('Logout')
       expect(page.has_link?('Logout')).to be false
+      page.should have_link('Register')
       page.should have_link('Login')
       visit root_path
       expect(page.has_link?('Logout')).to be false
+      page.should have_link('Register')
       page.should have_link('Login')
     end
   end
