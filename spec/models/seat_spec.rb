@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: seats
+#
+#  id          :integer          not null, primary key
+#  zeppelin_id :integer
+#  row         :integer
+#  column      :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Seat do

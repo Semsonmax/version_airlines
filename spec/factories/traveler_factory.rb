@@ -23,5 +23,6 @@ FactoryGirl.define do
     email                 'admin@gmail.com'
     password              'a'
     password_confirmation 'a'
+    is_admin              'true'
   end
 end
