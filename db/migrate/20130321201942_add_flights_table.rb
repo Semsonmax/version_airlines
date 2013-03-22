@@ -4,10 +4,8 @@ class AddFlightsTable < ActiveRecord::Migration
       t.string :code
       t.string :airport_depart
       t.string :airport_arrive
-      t.date :date_depart
-      t.date :date_arrive
-      t.integer :number_of_rows
-      t.integer :number_of_columns
+      t.date :flight_date
+      t.integer :airplane_id
       t.timestamps
     end
   end

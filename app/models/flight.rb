@@ -2,34 +2,28 @@
 #
 # Table name: flights
 #
-#  id                :integer          not null, primary key
-#  code              :string(255)
-#  airport_depart    :string(255)
-#  airport_arrive    :string(255)
-#  date_depart       :date
-#  date_arrive       :date
-#  number_of_rows    :integer
-#  number_of_columns :integer
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id             :integer          not null, primary key
+#  code           :string(255)
+#  airport_depart :string(255)
+#  airport_arrive :string(255)
+#  flight_date    :date
+#  airplane_id    :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 
 class Flight < ActiveRecord::Base
-  attr_accessible :code, :airport_depart, :airport_arrive, :date_depart, :date_arrive, :number_of_rows, :number_of_columns
-  has_many :users, :inverse_of => :flight
+  attr_accessible :code, :airport_depart, :airport_arrive, :flight_date, :airplane_id
+  has_and_belongs_to_many :users
   has_many :seats, :inverse_of => :flight
-
-  def total_seats
-    self.number_of_rows * self.number_of_columns
-  end
+  belongs_to :airplane, :inverse_of => :flights
 
   def create_seats
-    binding.pry
-    total_seats = self.total_seats
+    total_seats = self.airplane.total_seats
     j = 1
     k = 1
-    number_of_rows.times do
-      number_of_columns.times do
+    self.airplane.number_of_rows.times do
+      self.airplane.number_of_columns.times do
         seat = Seat.create(row: j, column: k)
         self.seats << seat
         k += 1
