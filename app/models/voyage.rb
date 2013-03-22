@@ -13,7 +13,7 @@
 #
 
 class Voyage < ActiveRecord::Base
-  attr_accessible :code, :airfield_depart, :airfield_arrive, :flight_date, :airplane_id
+  attr_accessible :code, :airfield_depart, :airfield_arrive, :voyage_date, :airplane_id
   belongs_to :zeppelin, :inverse_of => :voyages
   has_many :bookings
   has_many :seats, :through => :bookings
