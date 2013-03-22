@@ -8,13 +8,14 @@
 #  number_of_columns :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  name              :string(255)
 #
 
 FactoryGirl.define do
   factory :zeppelin, class: Zeppelin do
-    style                 'LZ129'
+    name                  'The Lord Grantham'
+    style                 'Clipper Class'
     number_of_rows        3
     number_of_columns     24
-
   end
 end
