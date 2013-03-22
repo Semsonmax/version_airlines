@@ -18,4 +18,5 @@ class Voyage < ActiveRecord::Base
   has_many :bookings
   has_many :seats, :through => :bookings
   has_many :travelers, :through => :bookings
+  validates :zeppelin_id, :presence => true
 end

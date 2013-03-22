@@ -18,5 +18,6 @@ FactoryGirl.define do
     airfield_depart       'Berlin'
     airfield_arrive       'New York'
     voyage_date           '1900-04-01'
+    zeppelin              {Zeppelin.create(:number_of_rows=>5,:number_of_columns=>2)}
   end
 end

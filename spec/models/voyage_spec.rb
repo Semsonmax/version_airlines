@@ -32,6 +32,10 @@ describe Voyage do
       expect(voy.airfield_arrive).to eq 'New York'
       expect(voy.voyage_date) == '1900-04-01'
     end
+    it 'doesn\'t exist without a Zeppelin object' do
+      v = Voyage.create
+      expect(v.id).to be nil
+    end
   end
 
   describe '#travelers' do
