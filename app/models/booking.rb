@@ -16,5 +16,5 @@ class Booking < ActiveRecord::Base
   has_many :voyages
   has_many :travelers
 
-  validates :seat_id :voyage_id, :traveler_id, :presence => true
+  validates :seat_id, :voyage_id, :traveler_id, :presence => true
 end
