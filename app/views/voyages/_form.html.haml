@@ -1,4 +1,19 @@
 .row
   .large-10.large-centered.columns
-    %h2 **new voyage form**
+    %h2 New Voyage
+    = form_for @voyage, :remote=>true do |f|
+      = f.label       :code
+      = f.text_field  :code
+
+      = f.label       :airfield_depart
+      = f.text_field  :airfield_depart
+
+      = f.label       :airfield_arrive
+      = f.text_field  :airfield_arrive
+
+      = f.label       :voyage_date
+      = f.text_field  :voyage_date
+
+      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+      = f.submit
 
