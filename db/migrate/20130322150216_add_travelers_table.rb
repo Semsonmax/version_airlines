@@ -1,9 +1,8 @@
-class AddUsersTable < ActiveRecord::Migration
+class AddTravelersTable < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :travelers do |t|
       t.string :name
       t.string :email
-      t.integer :seat_id
       t.boolean :is_admin
       t.timestamps
     end

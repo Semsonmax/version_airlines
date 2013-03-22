@@ -11,47 +11,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130322000540) do
+ActiveRecord::Schema.define(:version => 20130322150342) do
 
-  create_table "airplanes", :force => true do |t|
+  create_table "bookings", :force => true do |t|
+    t.integer  "traveler_id"
+    t.integer  "seat_id"
+    t.integer  "voyage_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "seats", :force => true do |t|
+    t.integer  "booking_id"
+    t.integer  "zeppelin_id"
+    t.integer  "row"
+    t.integer  "column"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "travelers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "is_admin"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "voyages", :force => true do |t|
+    t.string   "code"
+    t.string   "airfield_depart"
+    t.string   "airfield_arrive"
+    t.date     "voyage_date"
+    t.integer  "zeppelin_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "zeppelins", :force => true do |t|
     t.string   "style"
     t.integer  "number_of_rows"
     t.integer  "number_of_columns"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-  end
-
-  create_table "flights", :force => true do |t|
-    t.string   "code"
-    t.string   "airport_depart"
-    t.string   "airport_arrive"
-    t.date     "flight_date"
-    t.integer  "airplane_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "flights_users", :id => false, :force => true do |t|
-    t.integer "flight_id"
-    t.integer "user_id"
-  end
-
-  create_table "seats", :force => true do |t|
-    t.integer  "flight_id"
-    t.integer  "user_id"
-    t.integer  "row"
-    t.integer  "column"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.integer  "seat_id"
-    t.boolean  "is_admin"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end
