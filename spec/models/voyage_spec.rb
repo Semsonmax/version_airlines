@@ -43,7 +43,20 @@ describe Voyage do
       booking.traveler = trvlr
       booking.voyage = voy
       booking.save
-      expect(voy.bookings.first).to eq booking
+      expect(voy.travelers.first).to eq trvlr
     end
   end
+  describe '#seats' do
+    it 'has many seats through bookings' do
+      zep.create_seats
+      seat = Seat.last
+      booking = Booking.new
+      booking.seat = seat
+      booking.traveler = trvlr
+      booking.voyage = voy
+      booking.save
+      expect(voy.seats.first).to eq seat
+    end
+  end
+
 end
