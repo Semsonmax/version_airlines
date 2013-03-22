@@ -45,4 +45,17 @@ describe 'Session' do
     end
   end
 
+  describe 'DELETE /login' do
+    it 'logs the user off the system', :js => true do
+      traveler = FactoryGirl.create(:traveler)
+      login_to_system(traveler.name)
+      click_link('Logout')
+      expect(page.has_link?('Logout')).to be false
+      page.should have_link('Login')
+      visit root_path
+      expect(page.has_link?('Logout')).to be false
+      page.should have_link('Login')
+    end
+  end
+
 end
