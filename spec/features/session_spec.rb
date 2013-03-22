@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'features/shared/login_helper'
+include LoginHelper
 describe 'Session' do
 
   describe 'GET /' do
