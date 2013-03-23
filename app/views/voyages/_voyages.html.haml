@@ -10,7 +10,7 @@
         %td Zeppelin
         - Voyage.all.each do |voyage|
           %tr
-            %td= voyage.code
+            %td= link_to voyage.code, voyage
             %td= voyage.airfield_depart
             %td= voyage.airfield_arrive
             %td= voyage.voyage_date
