@@ -7,6 +7,8 @@ describe 'Voyages' do
   let(:voyage) {FactoryGirl.create(:voyage)}
   let(:zep) {FactoryGirl.create(:zeppelin)}
   before(:each) do
+    voyage.zeppelin = zep
+    voyage.save
     visit root_path
     admin = FactoryGirl.create(:admin_traveler)
     login_to_system(admin)
@@ -35,7 +37,7 @@ describe 'Voyages' do
       fill_in('voyage_airfield_depart', :with=>voyage.airfield_depart)
       fill_in('voyage_airfield_arrive', :with=>voyage.airfield_arrive)
       fill_in('voyage_voyage_date', :with=>voyage.voyage_date)
-      select(zeppelin.name, :from=>'zeppelins')
+      select(zep.style, :from=>'voyage_zeppelin_id')
       click_button('Create Voyage')
       expect(voyage.id).to_not eq nil
     end
