@@ -1,1 +1,13 @@
 %h3 ***seating chart here***
+
+.row
+  .large-12.large-centered.columns
+    #seatchart
+      - @voyage.zeppelin.number_of_rows.times do
+        - j = 1
+        .seat_row
+          - @voyage.zeppelin.seats.where(row: j).each do |seat|
+            .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
+              .seat_numbers= "#{seat.row} - #{seat.column}"
+            - j += 1
+          .clear
