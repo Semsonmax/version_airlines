@@ -4,11 +4,11 @@
 
 .row
   .large-5.columns
-    .splash
-      %span.hsjs.title Von Zeppelin's
+    .splash.hide
+      %span.hsjs.title Von Zeppelin&#146;s
       %span.hsjs.title super elegant
       %span.hsjs.title perfectly safe
-      %span.hsjs.title{:style => "margin-bottom: -10px;"} ZEPPELIN
+      %span.hsjs.title{:style => "margin-bottom: -20px;"} ZEPPELIN
       %span.hsjs.title VOYAGES
   .large-7.columns
     #form
@@ -22,8 +22,11 @@
 
 
 
+
+
 %script{:charset => "utf-8", :type => "text/javascript"}
   $(window).load(function(){
+  $('.splash').fadeIn('slow', function() {});
   $().hatchShow();
   });
   jQuery.fn.hatchShow = function(){
