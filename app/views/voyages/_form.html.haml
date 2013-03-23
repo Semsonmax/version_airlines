@@ -2,17 +2,10 @@
   .large-10.large-centered.columns
     %h2 New Voyage
     = form_for @voyage, :remote=>true do |f|
-      = f.label       :code
-      = f.text_field  :code
-
-      = f.label       :airfield_depart
-      = f.text_field  :airfield_depart
-
-      = f.label       :airfield_arrive
-      = f.text_field  :airfield_arrive
-
-      = f.label       :voyage_date
-      = f.text_field  :voyage_date
+      = f.text_field  :code, :placeholder=>'code', :autofocus=>'true'
+      = f.text_field  :airfield_depart, :placeholder=>'Airfield Departure'
+      = f.text_field  :airfield_arrive, :placeholder=>'Airfield Arrival'
+      = f.text_field  :voyage_date, :placeholder=>'Voyage Date'
 
       = f.label         :zeppelins
       = f.select        :zeppelin_id, options_for_select(Zeppelin.all.map {|zep| [zep.style, zep.id] })
