@@ -6,17 +6,14 @@
     = "This is the user id #{@auth.id}"
 
     #seatchart
-      - @voyage.zeppelin.number_of_rows.times do
-        - j = 1
-        .seat_row
-          - @voyage.zeppelin.seats.where(row: j).each do |seat|
-            .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
-              .seat_numbers= "#{seat.row} - #{seat.column}"
-            - j += 1
-          .clear
+      .seat_row
+        - @voyage.zeppelin.seats.each do |seat|
+          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
+            .seat_numbers= "#{seat.row} - #{seat.column}"
+        .clear
 
     = form_tag bookings_path, :remote => true do
-      = hidden_field_tag :user_id, @auth.id
+      = hidden_field_tag :traveler_id, @auth.id
       = hidden_field_tag :voyage_id, @voyage.id
       = hidden_field_tag :seat_row
       = hidden_field_tag :seat_column

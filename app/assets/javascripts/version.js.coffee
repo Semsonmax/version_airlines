@@ -2,10 +2,16 @@ class Version
   @document_ready: ->
     $('#form').on('click', 'a[data-clear-form]', Version.clear_form)
     $('body').on('click', '.seat_column', Version.get_seat_id)
+    Version.mark_occupied_seats
 
   @clear_form: (e) ->
     e.preventDefault()
     $('#form').empty()
+    $('.new_button').show();
+
+  @mark_occupied_seats: ->
+    if $('.seat_column').data('occupied') == true
+
 
   @get_seat_id: ->
     row = $(this).data('row')

@@ -114,5 +114,27 @@ label{
   background-color: white;
 }
 
+/* styling for forms */
+.form_voyage {
+  background-color: #fff;
+  /*opacity: 0.8;*/
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 25px #000;
+  border: 5px solid rgb(206,101,37);
+
+}
+.form_voyage form input {
+  opacity: 1;
+}
+
+.show_voyages {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 25px #000;
+}
+
+
 
 
