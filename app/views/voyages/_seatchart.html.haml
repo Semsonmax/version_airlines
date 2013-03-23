@@ -11,3 +11,11 @@
               .seat_numbers= "#{seat.row} - #{seat.column}"
             - j += 1
           .clear
+
+
+
+
+    = form_tag bookings_path, :remote => true do |f|
+      = hidden_field_tag :user_id, @auth.id
+      = hidden_field_tag :voyage_id, @voyage.id
+      = submit_tag nil, :class => 'button tiny'
