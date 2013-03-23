@@ -1,17 +1,15 @@
-.row
-  .large-10.large-centered.columns
-    %h2 Flights
-    %table
+%h2 Flights
+%table
+  %tr
+    %td Code
+    %td Airfield Depart
+    %td Airfield Arrive
+    %td Date
+    %td Zeppelin
+    - Voyage.all.each do |voyage|
       %tr
-        %td Code
-        %td Airfield Depart
-        %td Airfield Arrive
-        %td Date
-        %td Zeppelin
-        - Voyage.all.each do |voyage|
-          %tr
-            %td= link_to voyage.code, voyage
-            %td= voyage.airfield_depart
-            %td= voyage.airfield_arrive
-            %td= voyage.voyage_date
-            %td= voyage.zeppelin.style
+        %td= link_to voyage.code, voyage
+        %td= voyage.airfield_depart
+        %td= voyage.airfield_arrive
+        %td= voyage.voyage_date
+        %td= voyage.zeppelin.style

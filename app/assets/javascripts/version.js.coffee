@@ -6,6 +6,7 @@ class Version
   @clear_form: (e) ->
     e.preventDefault()
     $('#form').empty()
+    $('.new_button').show();
 
   @get_seat_id: ->
     row = $(this).data('row')
