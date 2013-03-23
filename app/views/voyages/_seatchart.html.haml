@@ -18,11 +18,8 @@
     = form_tag bookings_path, :remote => true do
       = hidden_field_tag :user_id, @auth.id
       = hidden_field_tag :voyage_id, @voyage.id
+      = hidden_field_tag :seat_row
+      = hidden_field_tag :seat_column
       = submit_tag nil, :class => 'button tiny'
-
-%script
-  ="var user_id = #{@auth.id}"
-  ="var voyage_id = #{@voyage.id}"
-
 
 

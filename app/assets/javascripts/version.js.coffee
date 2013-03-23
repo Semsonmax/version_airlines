@@ -13,5 +13,13 @@ class Version
     console.log('Row is '+row)
     column = $(this).data('column')
     console.log('Column is '+column)
+    $('#seat_row').val(row)
+    $('#seat_column').val(column)
+    # settings =
+    #   dataType: 'script'
+    #   type: 'post'
+    #   url: "/bookings"
+    #   data: {authenticity_token:token, }
+    # $.ajax(settings)
 
 $(document).ready(Version.document_ready)
