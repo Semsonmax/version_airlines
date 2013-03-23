@@ -9,6 +9,7 @@ class Version
 
   @get_seat_id: ->
     row = $(this).data('row')
+    $(this).css('background-color', '#333')
     console.log('Row is '+row)
     column = $(this).data('column')
     console.log('Column is '+column)

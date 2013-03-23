@@ -1,7 +1,10 @@
 %h3 ***seating chart here***
 
-.row
+.row.white
   .large-12.large-centered.columns
+    = "This is the voyage id  #{@voyage.id}"
+    = "This is the user id #{@auth.id}"
+
     #seatchart
       - @voyage.zeppelin.number_of_rows.times do
         - j = 1
@@ -11,3 +14,7 @@
               .seat_numbers= "#{seat.row} - #{seat.column}"
             - j += 1
           .clear
+
+%script
+  ="var user_id = #{@auth.id}"
+  ="var voyage_id = #{@voyage.id}"
