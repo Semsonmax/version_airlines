@@ -8,6 +8,9 @@ class VoyagesController < ApplicationController
     @voyage = Voyage.new
     @zeppelins = Zeppelin.all
   end
+  def create
+    Voyage.create(params[:voyage])
+  end
 
   def show
     @voyage = Voyage.find(params[:id])
