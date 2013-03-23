@@ -7,10 +7,14 @@
       %td Airfield Arrive
       %td Date
       %td Zeppelin
-      - Voyage.all.each do |voyage|
+      - Voyage.all.count.times do |i|
         %tr
-          %td= link_to voyage.code, voyage
-          %td= voyage.airfield_depart
-          %td= voyage.airfield_arrive
-          %td= voyage.voyage_date
-          %td= voyage.zeppelin.style
+          %td= link_to Voyage.all[i].code, Voyage.all[i]
+          %td= Voyage.all[i].airfield_depart
+          %td= Voyage.all[i].airfield_arrive
+          %td= Voyage.all[i].voyage_date
+          %td= Voyage.all[i].zeppelin.style
+          %td
+            %div{:id=>"map_canvas_#{i}", :class=>'map_canvas'}
+            %script
+              = "display_map(#{Voyage.all[i].get_arrival_coords[0]},#{Voyage.all[i].get_arrival_coords[1]}, 8, $('#map_canvas_#{i}'));"

@@ -63,4 +63,15 @@ describe Voyage do
     end
   end
 
+  describe '#get_arrival_coords' do
+    it 'gets the coords of the arrival location' do
+      expect(voy.get_arrival_coords).to_not be nil
+    end
+  end
+
+
+
+
+
+
 end

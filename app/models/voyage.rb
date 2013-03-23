@@ -19,4 +19,12 @@ class Voyage < ActiveRecord::Base
   has_many :seats, :through => :bookings
   has_many :travelers, :through => :bookings
   validates :zeppelin_id, :presence => true
+
+  # Used for map
+  def get_arrival_coords
+    result = Geocoder.search(self.airfield_arrive).first
+    [result.latitude, result.longitude] if result.present?
+  end
+
+
 end
