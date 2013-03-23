@@ -8,7 +8,7 @@
       = f.text_field  :voyage_date, :placeholder=>'Voyage Date'
 
       = f.label         :zeppelins
-      = f.select        :zeppelin_id, options_for_select(Zeppelin.all.map {|zep| ["#{zep.style} -- #{zep.total_seats} seats available", zep.id] })
+      = f.select        :zeppelin_id, options_for_select(Zeppelin.all.map {|zep| ["#{zep.name} -- #{zep.style} -- #{zep.total_seats} seats available", zep.id] })
 
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = f.submit
