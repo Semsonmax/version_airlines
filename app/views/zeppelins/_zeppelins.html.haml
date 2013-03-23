@@ -1,14 +1,10 @@
-.row
-  .large-10.large-centered.columns
-    #zeppelins
-      %h3.green Our zeppelin fleet
-      %ul
-        - @zeppelins.each do |zeppelin|
-          %li= zeppelin.name
-          %li= zeppelin.number_of_columns
-          %li= zeppelin.number_of_rows
-          %table
-            - zeppelin.number_of_columns.times do
-              - zeppelin.number_of_rows.times do
-                %tr .
-              %br
+#zeppelins
+  %h3.green Our zeppelin fleet
+  %ul
+    - @zeppelins.each do |zeppelin|
+      %li= zeppelin.name
+      %table.admin
+        - zeppelin.number_of_columns.times do
+          %tr.admin
+            - zeppelin.number_of_rows.times do
+              %td.admin .
