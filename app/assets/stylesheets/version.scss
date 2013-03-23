@@ -115,7 +115,7 @@ label{
   /*opacity: 0.8;*/
   padding: 10px;
   border-radius: 15px;
-  box-shadow: 5px 5px 25px #252525;
+  box-shadow: 5px 5px 25px #000;
   border: 5px solid rgb(206,101,37);
 
 }
@@ -123,7 +123,12 @@ label{
   opacity: 1;
 }
 
-
+.show_voyages {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 25px #000;
+}
 
 
 
