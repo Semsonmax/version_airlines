@@ -117,6 +117,14 @@ label{
   border-radius: 15px;
   box-shadow: 5px 5px 25px #000;
   border: 5px solid rgb(206,101,37);
+  border-width: 5px;
+  border-style: solid;
+  border-color: -webkit-gradient(linear, 0 0, 0 bottom, from(#DFA24E), to(#000000));
+  border-color: -webkit-linear-gradient(#DFA24E, #000000);
+  border-color: -moz-linear-gradient(#DFA24E, #000000);
+  border-color: -ms-linear-gradient(#DFA24E, #000000);
+  border-color: -o-linear-gradient(#DFA24E, #000000);
+  border-color: linear-gradient(#DFA24E, #000000);
 
 }
 
