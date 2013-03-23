@@ -1,13 +1,15 @@
-*{
-  letter-spacing: -0.05em;
+* {  letter-spacing: -0.05em; }
+
+h1, h2, h3, h4, .title {  font-family: 'League Gothic'; }
+.title{
+  color: white;
+  text-shadow: black 2px 2px 10px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
 }
-body {
-  background: url('https://dl.dropbox.com/u/5433755/seniors/28_1bingo.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
+
+
 .green{
   color: #2C9454;
 }
@@ -39,10 +41,37 @@ table {
 }
 
 body {
-  background: url('#') no-repeat center center fixed;
+  background: url('http://img204.imageshack.us/img204/5637/ussmacon3iq9.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+
+/* FONTS CODE */
+
+/* Regular */
+@font-face {
+    font-family: 'League Gothic';
+    src: font-url('leaguegothic-italic-webfont.eot');
+    src: font-url('leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('leaguegothic-italic-webfont.woff') format('woff'),
+         font-url('leaguegothic-italic-webfont.ttf') format('truetype'),
+         font-url('leaguegothic-italic-webfont.svg#league_gothic_italicregular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'League Gothic';
+    src: font-url('leaguegothic-regular-webfont.eot');
+    src: font-url('leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('leaguegothic-regular-webfont.woff') format('woff'),
+         font-url('leaguegothic-regular-webfont.ttf') format('truetype'),
+         font-url('leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
