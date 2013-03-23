@@ -5,5 +5,10 @@
       %ul
         - @zeppelins.each do |zeppelin|
           %li= zeppelin.name
-
-        / this is where we through in mini graphic of seats
+          %li= zeppelin.number_of_columns
+          %li= zeppelin.number_of_rows
+          %table
+            - zeppelin.number_of_columns.times do
+              - zeppelin.number_of_rows.times do
+                %tr .
+              %br
