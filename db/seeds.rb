@@ -31,9 +31,6 @@ a1 = Traveler.create(name: 'admin', email: 'admin@gmail.com', password: 'a', pas
 a1.is_admin = true
 a1.save
 
-z1.create_seats
-z2.create_seats
-
 s1 = z1.seats.first
 
 s2 = z2.seats.first

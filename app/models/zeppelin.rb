@@ -17,6 +17,8 @@ class Zeppelin < ActiveRecord::Base
   has_many :voyages, :inverse_of => :zeppelin
   validates :number_of_rows, :number_of_columns, :presence => true
 
+  before_save :create_seats
+
   def total_seats
     self.number_of_rows * self.number_of_columns
   end
