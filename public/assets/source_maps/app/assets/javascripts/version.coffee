@@ -6,8 +6,9 @@ class Version
 
   @clear_form: (e) ->
     e.preventDefault()
-    $('#form').empty()
-    $('.new_button').show();
+    $('#form').fadeOut('slow')
+    setTimeout(empty_after_fade(),3000);
+    $('.new_button').show()
 
   # @mark_occupied_seats: ->
   #   if $('.seat_column').data('occupied') == true
@@ -26,5 +27,11 @@ class Version
     #   url: "/bookings"
     #   data: {authenticity_token:token, }
     # $.ajax(settings)
+
+
+  @empty_after_fade: ->
+    $('#form').empty()
+
+
 
 $(document).ready(Version.document_ready)
