@@ -5,6 +5,8 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :assets do
   gem 'sass-rails'
