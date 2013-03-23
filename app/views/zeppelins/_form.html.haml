@@ -1,9 +1,11 @@
-.row
-  .large-10.large-centered.columns
-    = form_for @zeppelin, :remote => true do |f|
-      = f.text_field :name, :autofocus => true, :placeholder => 'Zeppelin Name'
-      = f.text_field :style, :placeholder => 'Zeppelin class'
-      = f.text_field :number_of_rows, :placeholder => 'Number of rows'
-      = f.text_field :number_of_columns, :placeholder => 'Number of columns'
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button alert tiny')
-      = f.submit :class => 'button tiny'
+.form_voyage
+  .row
+    .large-10.large-centered.columns
+      %h2 New Zeppelin
+      = form_for @zeppelin, :remote => true do |f|
+        = f.text_field :name, :autofocus => true, :placeholder => 'Zeppelin Name'
+        = f.text_field :style, :placeholder => 'Zeppelin class'
+        = f.text_field :number_of_rows, :placeholder => 'Number of rows'
+        = f.text_field :number_of_columns, :placeholder => 'Number of columns'
+        = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button alert tiny')
+        = f.submit :class => 'button tiny'

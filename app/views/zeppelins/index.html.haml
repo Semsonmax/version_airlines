@@ -1,14 +1,10 @@
 .row
   .large-12.large-centered.spacer
-
 .row
-  .large-10.large-centered.columns
-    = link_to('New Zeppelin', new_zeppelin_path, :remote => true, :class => 'button small success radius')
-
-#form
-
-
-.row
-  .large-10.columns
+  .large-8.columns
     #show
-      = render(:partial => 'zeppelins')
+    = render(:partial => 'zeppelins')
+  .large-4.columns
+    = link_to('New Zeppelin', new_zeppelin_path, :remote => true, :class => 'button small success radius new_button')
+    #form
+

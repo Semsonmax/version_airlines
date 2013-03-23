@@ -119,6 +119,10 @@ label{
   border: 5px solid rgb(206,101,37);
 
 }
+
+
+
+
 .form_voyage form input {
   opacity: 1;
 }
@@ -129,6 +133,20 @@ label{
   border-radius: 15px;
   box-shadow: 5px 5px 25px #000;
 }
+
+.show_zeppelins {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 25px #000;
+
+  ul li {
+    list-style: none;
+  }
+}
+
+
+
 
 
 
