@@ -34,20 +34,23 @@ describe 'Voyages' do
     end
   end
 
-  # describe 'POST /voyages' do
-  #   it 'creates a Voyage in the db', :js=>true do
-  #     login_to_system(admin)
-  #     visit voyages_path
-  #     click_link('New Voyage')
-  #     fill_in('voyage[code]', :with=>voyage.code)
-  #     fill_in('voyage_airfield_depart', :with=>voyage.airfield_depart)
-  #     fill_in('voyage_airfield_arrive', :with=>voyage.airfield_arrive)
-  #     fill_in('voyage_voyage_date', :with=>voyage.voyage_date)
-  #     select(zep.style, :from=>'voyage_zeppelin_id')
-  #     click_button('Create Voyage')
-  #     expect(voyage.id).to_not eq nil
-  #   end
-  # end
+  describe 'POST /voyages' do
+    it 'creates a Voyage in the db', :js=>true do
+      login_to_system(admin)
+      visit voyages_path
+      binding.pry
+      click_link('New Voyage')
+      binding.pry
+      fill_in('voyage_code', :with=>voyage.code)
+      binding.pry
+      fill_in('voyage_airfield_depart', :with=>voyage.airfield_depart)
+      fill_in('voyage_airfield_arrive', :with=>voyage.airfield_arrive)
+      fill_in('voyage_voyage_date', :with=>voyage.voyage_date)
+      select(zep.style, :from=>'voyage_zeppelin_id')
+      click_button('Create Voyage')
+      expect(voyage.id).to_not eq nil
+    end
+  end
 
   # describe 'POST /voyages' do
   #   it 'creates a Voyage in the db', :js=>true do
