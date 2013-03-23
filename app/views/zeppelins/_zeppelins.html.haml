@@ -1,9 +1,10 @@
-.row
-  .large-10.large-centered.columns
-    #zeppelins
-      %h3.green Our zeppelin fleet
-      %ul
-        - @zeppelins.each do |zeppelin|
-          %li= zeppelin.name
-
-        / this is where we through in mini graphic of seats
+#zeppelins
+  %h3.green Our zeppelin fleet
+  %ul
+    - @zeppelins.each do |zeppelin|
+      %li= zeppelin.name
+      %table.admin
+        - zeppelin.number_of_columns.times do
+          %tr.admin
+            - zeppelin.number_of_rows.times do
+              %td.admin .
