@@ -30,8 +30,10 @@ h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
 .green { color: #2C9454; }
 .red { color: red; }
 
-
-
+.white
+{
+  background-color: white;
+}
 
 
 
@@ -71,6 +73,18 @@ body {
   border: 1px solid #333;
   margin: 6px;
 
+}
+
+/* background color for a user occupied seat */
+.blue
+{
+  background-color: #003366;
+}
+
+/* background color for an occupied seat */
+.gray
+{
+  background-color: #333;
 }
 
 .clear
@@ -120,11 +134,6 @@ label{
          font-url('leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
     font-weight: normal;
     font-style: normal;
-}
-
-.white
-{
-  background-color: white;
 }
 
 /* styling for forms */
