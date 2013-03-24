@@ -1,6 +1,10 @@
+
+
+
+
 /* GENERAL TYPOGRAPHY PRESETS */
 
-* { letter-spacing: -0.05em; }
+* { letter-spacing: -0.03em; }
 
 h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
 // p, label, input { font-family: Georgia;}
@@ -8,8 +12,8 @@ h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
 /* END */
 
 
-
 /* this is for the fancy type on the main index */
+
 .title {
   color: white;
   text-shadow: black 2px 2px 10px;
@@ -17,9 +21,17 @@ h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
   text-transform: uppercase;
 }
 
+/* END */
 
 
+.zeppname{
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2em;
+}
 
+li{
+  list-style-type: none;
+}
 
 /* utilities */
 
@@ -32,23 +44,25 @@ h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
 
 .white
 {
-  background-color: white;
+  color: white;
+}
+/* END utilities */
+
+
+
+table {
+  font-size: 1.4em;
 }
 
 
 
-/*table {
-  width: 400px;
-  font-size: 30px;
-}*/
-
-#chart{
+#chart {
 /*  height: 400px;*/
   width: 600px;
 }
 
 
-.radio{
+.radio {
   float: right;
   padding-left: 10px;
   font-size: 30px;
@@ -107,9 +121,14 @@ body {
 
 table.admin {
   td {
-    border: 1px solid black;
+    border: 5px solid black;
+    width: 30px;
+    height: 30px;
     padding: 1px;
+
+
   }
+
 }
 
 .bg {
@@ -124,6 +143,8 @@ label{
 
 
 /* FONTS CODE */
+
+@import url(http://fonts.googleapis.com/css?family=UnifrakturCook:700);
 
 /* Regular */
 @font-face {
