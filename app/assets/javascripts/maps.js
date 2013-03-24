@@ -26,7 +26,11 @@ function add_marker(lat, lon, title, canvas) {
   marker.setMap(map);
 }
 
-function set_bounds() {
+function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
+  bounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(depart_lat+arrive_lat),
+    new google.maps.LatLng(depart_lon+arrive_lon) );
+  map.fitBounds(bounds);
 
 }
 

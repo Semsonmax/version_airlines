@@ -21,4 +21,5 @@
               = "display_map(#{ (voyage.arrive_lat+voyage.depart_lat) / 2},#{ (voyage.arrive_long + voyage.depart_long) / 2 }, 3, $(\'#map_canvas_#{i}\') );"
               = "add_marker(#{voyage.depart_lat},#{voyage.depart_long},\'#{voyage.airfield_depart}\',$('#map_canvas_#{i}')[0]);"
               = "add_marker(#{voyage.arrive_lat},#{voyage.arrive_long},\'#{voyage.airfield_arrive}\',$('#map_canvas_#{i}')[0]);"
+              / = "set_bounds(#{voyage.arrive_lat},#{voyage.depart_lat},#{voyage.depart_long},#{voyage.depart_long});"
               = "add_path(#{voyage.depart_lat},#{voyage.depart_long}, #{voyage.arrive_lat},#{voyage.arrive_long}, $('#map_canvas_#{i}')[0]);"
