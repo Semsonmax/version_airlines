@@ -10,6 +10,10 @@
 #  zeppelin_id     :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  arrive_lat      :float
+#  arrive_long     :float
+#  depart_lat      :float
+#  depart_long     :float
 #
 
 require 'spec_helper'
@@ -62,5 +66,16 @@ describe Voyage do
       expect(voy.seats.first).to eq seat
     end
   end
+
+  describe '#get_arrival_coords' do
+    it 'gets the coords of the arrival location' do
+      expect(voy.get_arrival_coords).to_not be nil
+    end
+  end
+
+
+
+
+
 
 end

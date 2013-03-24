@@ -9,7 +9,7 @@ class VoyagesController < ApplicationController
     @zeppelins = Zeppelin.all
   end
   def create
-    Voyage.create(params[:voyage])
+    voyage = Voyage.create(params[:voyage])
   end
 
   def show

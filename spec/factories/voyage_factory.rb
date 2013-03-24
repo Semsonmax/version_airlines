@@ -10,6 +10,10 @@
 #  zeppelin_id     :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  arrive_lat      :float
+#  arrive_long     :float
+#  depart_lat      :float
+#  depart_long     :float
 #
 
 FactoryGirl.define do
