@@ -19,4 +19,4 @@
             %div{:id=>"map_canvas_#{i}", :class=>'map_canvas'}
             %script
               = "display_map(#{ (voyage.arrive_lat+voyage.depart_lat) / 2},#{ (voyage.arrive_long + voyage.depart_long) / 2 }, 1, $(\'#map_canvas_#{i}\') );"
-              = "add_marker(#{voyage.depart_lat},#{voyage.depart_long},\'#{voyage.airfield_depart}\',$('#map_canvas_#{i}'));"
+              = "add_marker(#{voyage.depart_lat},#{voyage.depart_long},\'#{voyage.airfield_depart}\',$('#map_canvas_#{i}')[0]);"
