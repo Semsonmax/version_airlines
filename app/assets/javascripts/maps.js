@@ -30,7 +30,7 @@ function add_marker(lat, lon, title, canvas) {
 }
 
 // used to establish the boundaries
-function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
+function set_bounds() {
   bounds = new google.maps.LatLngBounds();
   for(var i = 0; i < markers.length; i++) {
     var latlng = new google.maps.LatLng(markers[i].position.lat(), markers[i].position.lng() );
