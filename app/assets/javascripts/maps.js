@@ -15,8 +15,8 @@ function display_map(lat, lon, zoom, canvas) {
 
 
 
-function add_marker(lat, lon, title) {
+function add_marker(lat, lon, title, map) {
   var coords = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({position: coords, map: map, title: title});
-  markers.push(marker);
+  marker.setMap(map);
 }
