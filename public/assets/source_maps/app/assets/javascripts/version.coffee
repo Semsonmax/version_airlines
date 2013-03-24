@@ -2,7 +2,10 @@ class Version
   @document_ready: ->
     $('#form').on('click', 'a[data-clear-form]', Version.clear_form)
     $('body').on('click', '.seat_column', Version.get_seat_id)
+<<<<<<< HEAD
     # Version.mark_occupied_seats
+=======
+>>>>>>> a19cf9765a8377587c1d946aba5c053935682dc6
 
   @clear_form: (e) ->
     e.preventDefault()
@@ -10,9 +13,12 @@ class Version
     setTimeout(empty_after_fade(),3000);
     $('.new_button').show()
 
+<<<<<<< HEAD
   # @mark_occupied_seats: ->
   #   if $('.seat_column').data('occupied') == true
 
+=======
+>>>>>>> a19cf9765a8377587c1d946aba5c053935682dc6
   @get_seat_id: ->
     row = $(this).data('row')
     $(this).css('background-color', '#333')
@@ -33,5 +39,5 @@ class Version
     $('#form').empty()
 
 
-
 $(document).ready(Version.document_ready)
+

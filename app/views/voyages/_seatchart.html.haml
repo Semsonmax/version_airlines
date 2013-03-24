@@ -8,7 +8,7 @@
     #seatchart
       .seat_row
         - @voyage.zeppelin.seats.each do |seat|
-          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
+          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
             .seat_numbers= "#{seat.row} - #{seat.column}"
         .clear
 

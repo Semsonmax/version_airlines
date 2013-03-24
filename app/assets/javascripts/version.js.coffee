@@ -33,5 +33,5 @@ class Version
     $('#form').empty()
 
 
-
 $(document).ready(Version.document_ready)
+
