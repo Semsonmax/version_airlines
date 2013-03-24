@@ -30,9 +30,10 @@ describe 'Voyages' do
   describe 'GET /voyages/new' do
     it 'displays the New Voyage form for admins', :js=>true do
       login_to_system(admin)
-      visit voyages_path
-      page.should have_link('New Voyage')
-    end
+      click_link('Voyages')
+      click_link('New Voyage')
+      page.should have_button('Create Voyage')
+      end
   end
 
   describe 'GET /voyages/new' do
