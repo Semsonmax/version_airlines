@@ -1,12 +1,13 @@
 .row
   .large-12.large-centered.spacer
 .row
-  .large-9.columns
-    #flights
-      = render :partial => 'voyages'
-  .large-3.columns
+  .large-12.columns
     = link_to('New Voyage', new_voyage_path, :class => 'button small success radius new_button', :id=>'new_voyage', :remote=>true)
     #form
+.row
+  .large-12.columns
+    #flights
+      = render :partial => 'voyages'
 
 
 
