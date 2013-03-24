@@ -4,7 +4,7 @@ class VoyagesController < ApplicationController
 
   def index
     @voyage = Voyage.new
-    @voyages = Voyage.all
+    @voyages = Voyage.order(:voyage_date)
   end
   def new
     @voyage = Voyage.new
@@ -12,6 +12,7 @@ class VoyagesController < ApplicationController
   end
   def create
     voyage = Voyage.create(params[:voyage])
+    @voyages = Voyage.all
   end
 
   def show

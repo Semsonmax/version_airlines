@@ -1,4 +1,4 @@
-%h1.white  Please select a seat, brave traveler:
+%h3 Select a seat, my good man:
 
 .row.white
 
@@ -7,31 +7,23 @@
       = flash[:message]
 
   .large-12.large-centered.columns
-    = "This is the voyage id  #{@voyage.id}"
-    = "This is the user id #{@auth.id}"
-
     #seatchart
       .seat_row
         - @voyage.zeppelin.seats.each do |seat|
-          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name if seat.bookings.where(:voyage_id => @voyage.id).first.present?}"}
+          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.present? ? seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name : 'Open' }"}
             .seat_numbers
-              / = "#{seat.row} - #{seat.column}"
+              = "#{seat.row} - #{seat.column}"
               / - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
               /   = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
               / - else
               /   = "Open"
-          .seat_name
-            - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
-              = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
-            - else
-              = "Open"
         .clear
 
+.row
+  .large-12.large-centered.columns
     = form_tag bookings_path, :remote => true do
       = hidden_field_tag :traveler_id, @auth.id
       = hidden_field_tag :voyage_id, @voyage.id
       = hidden_field_tag :seat_id
-      = submit_tag nil, :class => 'button tiny'
-
-
-
+      = submit_tag 'Purchase Seat', :class => 'button large'
+    #purchase_line
