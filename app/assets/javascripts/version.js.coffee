@@ -13,6 +13,7 @@ class Version
   @get_seat_id: ->
     if $(this).is('.blue')
       $(this).removeClass('blue')
+      $('#purchase_line').removeClass('alert-box alert').empty()
     else
       $(this).addClass('blue')
       clear_seat_colors()
@@ -21,7 +22,7 @@ class Version
     column = $(this).data('column')
     seat_id = $(this).data('id')
     $('#seat_id').val(seat_id)
-    $('#purchase_line').text("You have selected #{row} - #{column}.")
+    $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
 
   @empty_after_fade: ->
     $('#form').empty()
