@@ -7,9 +7,6 @@
       = flash[:message]
 
   .large-12.large-centered.columns
-    = "This is the voyage id  #{@voyage.id}"
-    = "This is the user id #{@auth.id}"
-
     #seatchart
       .seat_row
         - @voyage.zeppelin.seats.each do |seat|
@@ -22,11 +19,14 @@
               /   = "Open"
         .clear
 
+.row
+  .large-12.large-centered.columns
     = form_tag bookings_path, :remote => true do
       = hidden_field_tag :traveler_id, @auth.id
       = hidden_field_tag :voyage_id, @voyage.id
       = hidden_field_tag :seat_id
-      = submit_tag nil, :class => 'button tiny'
+      = submit_tag 'Purchase Seat', :class => 'button large'
+    #purchase_line
 
 
 
