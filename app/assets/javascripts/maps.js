@@ -33,6 +33,7 @@ function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
     arrival     = new google.maps.LatLng(arrive_lat, arrive_lon);
     bounds      = new google.maps.LatLngBounds(arrival, departure);
     map.fitBounds(bounds);
+    map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds) );
 
     // empty markers array to prepare for the next map
     markers.length = 0;
