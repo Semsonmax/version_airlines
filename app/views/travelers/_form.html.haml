@@ -1,16 +1,17 @@
 .row
-  .large-4.large-centered.columns
-    / = render(:partial => 'shared/errors', :locals => {:object => @user})
-    = form_for @traveler, :url => travelers_path, :remote => true do |f|
-      = f.label :name
-      = f.text_field :name
-      = f.label :email
-      = f.text_field :email
-      = f.label :password
-      = f.password_field :password
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button alert tiny')
-      = f.submit nil, :class => 'button small success'
+  .large-6.large-centered.columns
+  .large-6.large-centered.columns
+    .bg
+      = form_for @traveler, :url => travelers_path, :remote => true do |f|
+        = f.label :name
+        = f.text_field :name
+        = f.label :email
+        = f.text_field :email
+        = f.label :password
+        = f.password_field :password
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
+        = f.submit nil, :class => 'button small radius success'
+        = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button alert radius small')
 
 

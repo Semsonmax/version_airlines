@@ -4,6 +4,7 @@ class VoyagesController < ApplicationController
 
   def index
     @voyage = Voyage.new
+    @voyages = Voyage.all
   end
   def new
     @voyage = Voyage.new

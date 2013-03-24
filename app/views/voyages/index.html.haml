@@ -2,13 +2,8 @@
   .large-12.large-centered.spacer
 .row
   .large-9.columns
-    #flights
+    #voyages
       = render :partial => 'voyages'
   .large-3.columns
-    = link_to('New Voyage', new_voyage_path, :class => 'button small success radius new_button', :id=>'new_voyage', :remote=>true)
+    = link_to('New Voyage', new_voyage_path, :class => 'button small success radius new_button', :id=>'new_voyage', :remote=>true) if (@auth.present? && @auth.is_admin.present?)
     #form
-
-
-
-
-
