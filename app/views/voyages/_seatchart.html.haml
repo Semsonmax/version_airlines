@@ -1,4 +1,4 @@
-%h3 ***seating chart here***
+%h1.white  Please select a seat, brave traveler:
 
 .row.white
 
@@ -15,11 +15,16 @@
         - @voyage.zeppelin.seats.each do |seat|
           .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name if seat.bookings.where(:voyage_id => @voyage.id).first.present?}"}
             .seat_numbers
-              = "#{seat.row} - #{seat.column}"
-              - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
-                = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
-              - else
-                = "Open"
+              / = "#{seat.row} - #{seat.column}"
+              / - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
+              /   = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
+              / - else
+              /   = "Open"
+          .seat_name
+            - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
+              = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
+            - else
+              = "Open"
         .clear
 
     = form_tag bookings_path, :remote => true do

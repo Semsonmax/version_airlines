@@ -3,7 +3,7 @@
     %h1.white Our Zeppelin Fleet:
     %ul
       - @zeppelins.each do |zeppelin|
-        %li.zeppname.white= zeppelin.name
+        %h4.li.white= zeppelin.name
         %table.admin
           - zeppelin.number_of_columns.times do
             %tr.admin

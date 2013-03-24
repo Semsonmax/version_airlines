@@ -1,9 +1,18 @@
 .row
   .large-12.large-centered.spacer
+
+
 .row
-  .large-9.columns
-    #voyages
-      = render :partial => 'voyages'
   .large-3.columns
-    = link_to('New Voyage', new_voyage_path, :class => 'button small success radius new_button', :id=>'new_voyage', :remote=>true) if (@auth.present? && @auth.is_admin.present?)
+    = link_to('New Voyage', new_voyage_path, :class => 'button round new_button', :id=>'new_voyage', :remote=>true) if (@auth.present? && @auth.is_admin.present?)
+  .large-9.columns
+.row
+  .large-12.large-centered
     #form
+
+.row
+  .large-12.columns
+    #voyages.bg
+      = render :partial => 'voyages'
+
+

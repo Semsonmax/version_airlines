@@ -1,14 +1,21 @@
 
 
+.button {
+  background-color: #61787D;
+  border-color: #41575C;
+  color: #fff;
 
-
+}
 /* GENERAL TYPOGRAPHY PRESETS */
 
 * { letter-spacing: -0.03em; }
 
-h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
+h1, h2, h3, h4, .title { font-family: 'Chango'; }
 // p, label, input { font-family: Georgia;}
 
+a {
+  color: white;
+}
 /* END */
 
 
@@ -35,17 +42,13 @@ li{
 
 /* utilities */
 
-.spacer{ height: 60px; }
+.spacer { height: 60px; }
 
-.center-text{ text-align: center; }
+.center-text { text-align: center; }
 
 .green { color: #2C9454; }
 .red { color: red; }
-
-.white
-{
-  color: white;
-}
+.white { color: white; }
 /* END utilities */
 
 
@@ -134,6 +137,8 @@ table.admin {
 .bg {
   background-color: rgba(100,100,100, 0.8);
   padding: 20px;
+  border-radius: 8px;
+  border: 4px double inset #666;
 }
 
 label{
@@ -144,7 +149,7 @@ label{
 
 /* FONTS CODE */
 
-@import url(http://fonts.googleapis.com/css?family=UnifrakturCook:700);
+@import url(http://fonts.googleapis.com/css?family=Chango);
 
 /* Regular */
 @font-face {
