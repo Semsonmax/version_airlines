@@ -11,21 +11,14 @@ class Version
     $('.new_button').show()
 
   @get_seat_id: ->
-    # if $(this).is('.blue')
-    #   $(this).removeClass('blue')
-    # else
-    #   $(this).addClass('blue')
-    clear_seat_colors()
-    $(this).addClass('blue')
+    if $(this).is('.blue')
+      $(this).removeClass('blue')
+    else
+      $(this).addClass('blue')
+      clear_seat_colors()
+      $(this).addClass('blue')
     seat_id = $(this).data('id')
     $('#seat_id').val(seat_id)
-    # settings =
-    #   dataType: 'script'
-    #   type: 'post'
-    #   url: "/bookings"
-    #   data: {authenticity_token:token, }
-    # $.ajax(settings)
-
 
   @empty_after_fade: ->
     $('#form').empty()
