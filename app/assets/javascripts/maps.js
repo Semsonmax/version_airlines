@@ -10,15 +10,14 @@ function display_map(lat, lon, zoom, canvas) {
   var mapOptions = {
     center: latlng,
     zoom: zoom,
+    zoomControl: false,
+    scaleControl: false,
+    mapTypeControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
   map = new google.maps.Map(canvas, mapOptions);
-  // map.fitBounds(new google.maps.LatLngBounds(
-  //     new google.maps.LatLng(lat / 2, lon / 2),
-  //     new google.maps.LatLng(lat, lon)
-  // ));
-}
+ }
 
 function add_marker(lat, lon, title, canvas) {
   coords = new google.maps.LatLng(lat, lon);
@@ -29,11 +28,16 @@ function add_marker(lat, lon, title, canvas) {
 
 
 function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
-    departure   = new google.maps.LatLng(depart_lat, depart_lon);
-    arrival     = new google.maps.LatLng(arrive_lat, arrive_lon);
-    bounds      = new google.maps.LatLngBounds(arrival, departure);
+  bounds = new google.maps.LatLngBounds();
+  for(var i = 0; i < markers.length; i++) {
+    var latlng = new google.maps.LatLng(markers[i].position.lat(), markers[i].position.lng() );
+    bounds.extend(latlng);
+  }
+    // departure   = new google.maps.LatLng(depart_lat, depart_lon);
+    // arrival     = new google.maps.LatLng(arrive_lat, arrive_lon);
+    // bounds      = new google.maps.LatLngBounds(departure, arrival);
     map.fitBounds(bounds);
-    map.setCenter(bounds.getCenter(), bounds.getBoundsZoomLevel(bounds) );
+    map.setCenter(bounds.getCenter() );
 
     // empty markers array to prepare for the next map
     markers.length = 0;
