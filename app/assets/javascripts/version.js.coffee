@@ -6,7 +6,8 @@ class Version
   @clear_form: (e) ->
     e.preventDefault()
     $('#form').fadeOut('slow')
-    setTimeout(empty_after_fade(),3000);
+    setTimeout(Version.empty_after_fade(),3000)
+    # $('#form').empty()
     $('.new_button').show()
 
   @get_seat_id: ->
