@@ -1,5 +1,6 @@
 // Used for maps
 var markers = [];
+var map;
 
 function display_map(lat, lon, zoom, canvas) {
   canvas = canvas[0];
@@ -13,8 +14,10 @@ function display_map(lat, lon, zoom, canvas) {
 
 }
 
-function add_marker(lat, lon, title, map) {
-  var coords = new google.maps.LatLng(lat, lon);
+
+
+function add_marker(lat, lon, title, canvas) {
+  coords = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({position: coords, map: map, title: title});
   marker.setMap(map);
 }
