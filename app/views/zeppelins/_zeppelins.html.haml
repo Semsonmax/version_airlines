@@ -1,11 +1,11 @@
-.show_zeppelins
+.bg
   #zeppelins
-    %h2 Our Zeppelin Fleet
+    %h1.white Our Zeppelin Fleet:
     %ul
       - @zeppelins.each do |zeppelin|
-        %li= zeppelin.name
+        %li.zeppname.white= zeppelin.name
         %table.admin
           - zeppelin.number_of_columns.times do
             %tr.admin
               - zeppelin.number_of_rows.times do
-                %td.admin .
+                %td.admin
