@@ -4,4 +4,7 @@
  *= require 'morris/morris.css'
  *= require 'version.scss'
  *= require 'jquery-ui-1.10.2.custom/css/humanity/jquery-ui-1.10.2.custom.min.css'
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require dataTables/jquery.dataTables
  */

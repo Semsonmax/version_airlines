@@ -4,6 +4,7 @@ include LoginHelper
 
 describe 'Voyages' do
   let(:admin) {FactoryGirl.create(:admin_traveler)}
+  let(:traveler) {FactoryGirl.create(:traveler)}
   let(:voyage) {FactoryGirl.create(:voyage)}
   let(:zep) {FactoryGirl.create(:zeppelin)}
   before(:each) do
@@ -27,12 +28,21 @@ describe 'Voyages' do
   end
 
   describe 'GET /voyages/new' do
-    it 'displays the New Voyage form', :js=>true do
+    it 'displays the New Voyage form for admins', :js=>true do
       login_to_system(admin)
       visit voyages_path
       page.should have_link('New Voyage')
     end
   end
+
+  describe 'GET /voyages/new' do
+    it 'does not display the New Voyage form for non admins', :js=>true do
+      login_to_system(traveler)
+      visit voyages_path
+      page.should_not have_link('New Voyage')
+    end
+  end
+
 
   # describe 'POST /voyages' do
   #   it 'creates a Voyage in the db', :js=>true do

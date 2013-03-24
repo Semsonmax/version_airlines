@@ -1,14 +1,17 @@
 .show_voyages
   %h2 Voyages
-  %table
-    %tr
-      %td Code
-      %td Airfield Depart
-      %td Airfield Arrive
-      %td Date
-      %td Zeppelin
-      - Voyage.all.count.times do |i|
-        - voyage = Voyage.all[i]
+  %table#voyages_table
+    %thead
+      %tr
+        %th Code
+        %th Airfield Depart
+        %th Airfield Arrive
+        %th Date
+        %th Zeppelin
+        %th Map
+    %tbody
+      - i = 1
+      - @voyages.each do |voyage|
         %tr
           %td= link_to voyage.code, voyage
           %td= voyage.airfield_depart
@@ -24,3 +27,4 @@
               = "add_path(#{voyage.depart_lat},#{voyage.depart_long}, #{voyage.arrive_lat},#{voyage.arrive_long}, $('#map_canvas_#{i}')[0]);"
               = "set_bounds(#{voyage.arrive_lat},#{voyage.depart_lat},#{voyage.depart_long},#{voyage.depart_long});"
               / = "set_bounds(markers);"
+              - i += 1

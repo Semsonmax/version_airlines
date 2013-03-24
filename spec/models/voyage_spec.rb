@@ -23,6 +23,7 @@ describe Voyage do
   let(:voy) {FactoryGirl.create(:voyage)}
   let(:trvlr) {FactoryGirl.create(:traveler)}
   let(:zep) {FactoryGirl.create(:zeppelin)}
+
   describe '.create' do
     it 'is a Voyage object' do
       expect(voy).to be_an_instance_of(Voyage)
@@ -69,7 +70,7 @@ describe Voyage do
 
   describe '#get_arrival_coords' do
     it 'gets the coords of the arrival location' do
-      expect(voy.get_arrival_coords).to_not be nil
+      expect(voy.get_arrive_coords).to_not be nil
     end
   end
 
