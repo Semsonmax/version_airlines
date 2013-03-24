@@ -1,13 +1,12 @@
 .row
   .large-6.large-columns
   .large-6.large-columns
-    %fieldset
-      .bg
-        = form_tag '/login', :remote => true do
-          = label_tag :email
-          = text_field_tag :email, nil, :autofocus => true
-          = label_tag :password
-          = password_field_tag :password
-          = submit_tag 'Start', :class => 'button tiny radius success'
-          = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+    .bg
+      = form_tag '/login', :remote => true do
+        = label_tag :email
+        = text_field_tag :email, nil, :autofocus => true
+        = label_tag :password
+        = password_field_tag :password
+        = submit_tag 'Start', :class => 'button tiny radius success'
+        = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
 
