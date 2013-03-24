@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324012521) do
+ActiveRecord::Schema.define(:version => 20130324032529) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "traveler_id"
@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(:version => 20130324012521) do
     t.string   "airfield_arrive"
     t.date     "voyage_date"
     t.integer  "zeppelin_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.float    "arrive_lat"
-    t.float    "arrive_long"
-    t.float    "depart_lat"
-    t.float    "depart_long"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.float    "arrive_lat",      :default => 0.0
+    t.float    "arrive_long",     :default => 0.0
+    t.float    "depart_lat",      :default => 0.0
+    t.float    "depart_long",     :default => 0.0
   end
 
   create_table "zeppelins", :force => true do |t|

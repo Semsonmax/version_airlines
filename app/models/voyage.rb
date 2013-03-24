@@ -23,7 +23,7 @@ class Voyage < ActiveRecord::Base
   has_many :seats, :through => :bookings
   has_many :travelers, :through => :bookings
   validates :zeppelin_id, :presence => true
-
+  before_save :get_coords
 
   def get_coords
     self.arrive_lat   = get_arrive_coords[0]
