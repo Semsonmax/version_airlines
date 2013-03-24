@@ -20,7 +20,6 @@ function display_map(lat, lon, zoom, canvas) {
   // ));
 }
 
-
 function add_marker(lat, lon, title, canvas) {
   coords = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({position: coords, map: map, title: title});
@@ -42,3 +41,19 @@ function set_bounds() {
 // }
 // map.setCenter(latlngbounds.getCenter(), map.getBoundsZoomLevel(latlngbounds));
 // }
+function add_path(lat1, lon1, lat2, lon2, canvas)
+{
+  var flightPlanCoordinates = [
+    new google.maps.LatLng(lat1, lon1),
+    new google.maps.LatLng(lat2, lon2)
+  ];
+
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
+}

@@ -30,8 +30,10 @@ h1, h2, h3, h4, .title { font-family: 'League Gothic'; }
 .green { color: #2C9454; }
 .red { color: red; }
 
-
-
+.white
+{
+  background-color: white;
+}
 
 
 
@@ -70,7 +72,32 @@ body {
   display: inline-block;
   border: 1px solid #333;
   margin: 6px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 
+.seat_column:hover
+{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* background color for a user occupied seat */
+.blue
+{
+  background-color: #003366;
+}
+
+/* background color for an occupied seat */
+.gray
+{
+  background-color: #333;
 }
 
 .clear
@@ -122,11 +149,6 @@ label{
     font-style: normal;
 }
 
-.white
-{
-  background-color: white;
-}
-
 /* styling for forms */
 .form_voyage {
   background-color: #fff;
@@ -176,7 +198,5 @@ label{
   width: 200px;
   height: 200px;
 }
-
-
 
 
