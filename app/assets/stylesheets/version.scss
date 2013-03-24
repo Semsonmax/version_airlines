@@ -95,11 +95,11 @@ body {
 
 .seat_column:hover
 {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -webkit-transform: scale(1.2,1.2);
+  -moz-transform: scale(1.2,1.2);
+  -o-transform: scale(1.2,1.2);
+  -ms-transform: scale(1.2,1.2);
+  transform: scale(1.2,1.2);
 }
 
 /* background color for a user occupied seat */
