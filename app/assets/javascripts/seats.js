@@ -1,5 +1,6 @@
 $(function(){
   mark_occupied_seats();
+  $('#voyages_table_filter').children().children().attr('placeholder','Search Voyages');
 })
 
 function mark_occupied_seats()
