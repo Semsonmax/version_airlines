@@ -32,3 +32,5 @@ class Version
 
 $(document).ready(Version.document_ready)
 
+jQuery ->
+    $('#voyages_table').dataTable()

@@ -12,6 +12,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 
 group :development, :test do
