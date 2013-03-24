@@ -24,14 +24,19 @@ function add_marker(lat, lon, title, canvas) {
   coords = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({position: coords, map: map, title: title});
   marker.setMap(map);
+  markers.push(marker);
 }
 
-function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
-  bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(depart_lat+arrive_lat),
-    new google.maps.LatLng(depart_lon+arrive_lon) );
-  map.fitBounds(bounds);
 
+function set_bounds(arrive_lat, depart_lat, arrive_lon, depart_lon) {
+    departure   = new google.maps.LatLng(depart_lat, depart_lon);
+    arrival     = new google.maps.LatLng(arrive_lat, arrive_lon);
+    bounds      = new google.maps.LatLngBounds(arrival, departure);
+    map.fitBounds(bounds);
+    map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds) );
+
+    // empty markers array to prepare for the next map
+    markers.length = 0;
 }
 
 
