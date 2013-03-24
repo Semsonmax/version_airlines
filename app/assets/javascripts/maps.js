@@ -19,3 +19,20 @@ function add_marker(lat, lon, title, canvas) {
   var marker = new google.maps.Marker({position: coords, map: map, title: title});
   marker.setMap(map);
 }
+
+function add_path(lat1, lon1, lat2, lon2, canvas)
+{
+  var flightPlanCoordinates = [
+    new google.maps.LatLng(lat1, lon1),
+    new google.maps.LatLng(lat2, lon2),
+  ];
+
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
+}

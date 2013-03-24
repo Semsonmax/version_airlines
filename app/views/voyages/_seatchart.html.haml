@@ -1,6 +1,13 @@
 %h3 ***seating chart here***
 
+= "#{binding.pry}"
+
 .row.white
+
+  - if flash[:message].present?
+    .large-12.large-centered.columns.alert-box.alert
+      = flash[:message]
+
   .large-12.large-centered.columns
     = "This is the voyage id  #{@voyage.id}"
     = "This is the user id #{@auth.id}"
@@ -8,8 +15,13 @@
     #seatchart
       .seat_row
         - @voyage.zeppelin.seats.each do |seat|
-          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}"}
-            .seat_numbers= "#{seat.row} - #{seat.column}"
+          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name if seat.bookings.where(:voyage_id => @voyage.id).first.present?}"}
+            .seat_numbers
+              = "#{seat.row} - #{seat.column}"
+              - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
+                = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
+              - else
+                = "Open"
         .clear
 
     = form_tag bookings_path, :remote => true do
