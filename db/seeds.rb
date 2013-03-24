@@ -12,16 +12,9 @@ z5 = Zeppelin.create(name: 'Test', style: 'Test', number_of_rows: 3, number_of_c
 v1 = Voyage.create(zeppelin_id: z5.id)
 t1 = Traveler.create(name: 'Winthrop', email: 'winthrop@gmail.com', password: 'a', password_confirmation: 'a')
 
-v1 = Voyage.create(code: 'BN0401', airfield_depart: 'Berlin', airfield_arrive: 'New York', voyage_date: '1900-04-01')
-v2 = Voyage.create(code: 'LP0501', airfield_depart: 'London', airfield_arrive: 'Paris', voyage_date: '1900-05-01')
-v3 = Voyage.create(code: 'TS0601', airfield_depart: 'Tokyo', airfield_arrive: 'Seattle', voyage_date: '1900-06-01')
-
-v1.zeppelin = z1
-v1.save
-v2.zeppelin = z2
-v2.save
-v3.zeppelin = z2
-v3.save
+v1 = Voyage.create(zeppelin_id: z1.id, code: 'BN0401', airfield_depart: 'Berlin', airfield_arrive: 'New York', voyage_date: '1900-04-01')
+v2 = Voyage.create(zeppelin_id: z2.id, code: 'LP0501', airfield_depart: 'London', airfield_arrive: 'Paris', voyage_date: '1900-05-01')
+v3 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'Tokyo', airfield_arrive: 'Seattle', voyage_date: '1900-06-01')
 
 t1 = Traveler.create(name: 'Winthrop', email: 'winthrop@gmail.com', password: 'a', password_confirmation: 'a')
 t2 = Traveler.create(name: 'Reginald', email: 'reg@gmail.com', password: 'a', password_confirmation: 'a')
