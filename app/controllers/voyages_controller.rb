@@ -12,6 +12,7 @@ class VoyagesController < ApplicationController
   end
   def create
     voyage = Voyage.create(params[:voyage])
+    @voyages = Voyage.all
   end
 
   def show

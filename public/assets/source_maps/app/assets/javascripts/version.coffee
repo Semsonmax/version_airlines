@@ -23,7 +23,6 @@ class Version
   @empty_after_fade: ->
     $('#form').empty()
 
-
 $(document).ready(Version.document_ready)
 
 jQuery ->
