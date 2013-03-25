@@ -1,6 +1,7 @@
 <% if @voyage.valid? %>
   $('#form').empty();
   $('#voyages').empty().append("<%=j render :partial=>'voyages'%>");
+  $('.new_button').show();
 <% else %>
   $('#form').empty().append("<%=j render :partial=>'form' %>");
 <% end %>
