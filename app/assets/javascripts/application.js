@@ -8,6 +8,7 @@
 //= require 'accounting.min.js'
 //= require 'version.js'
 //= require 'foundation/js/foundation/foundation.forms.js'
+//= require 'foundation/js/foundation/foundation.topbar.js'
 //= require 'jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js'
 //= require 'maps.js'
 //= require 'seats.js'

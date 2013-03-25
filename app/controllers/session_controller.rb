@@ -5,6 +5,8 @@ class SessionController < ApplicationController
   end
 
   def create
+    @zeppelins = Zeppelin.order(:name)
+    @voyages = Voyage.order(:voyage_date)
     @auth = Traveler.where(:email => params[:email]).first
     if @auth.present? && @auth.authenticate(params[:password])
       session[:traveler_id] = @auth.id
