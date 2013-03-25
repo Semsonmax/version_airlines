@@ -117,6 +117,7 @@ body {
   display: inline-block;
   border: 1px solid #333;
   margin: 6px;
+  margin-left: 37px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -270,9 +271,10 @@ label{
   }
 
 #seatchart{
-  // margin-left: 40px;
+  margin-left: 12px;
   background-color: gray;
-  width: 235px;
+  width: 234px;
+  // border: 1px solid red;
 }
 
 #zeppelin_bottom
