@@ -28,18 +28,9 @@ class Voyage < ActiveRecord::Base
   before_save :get_arrive_coords
   before_save :get_depart_coords
 
-  # def get_coords
-  #   self.arrive_lat   = get_arrive_coords[0]
-  #   self.arrive_long  = get_arrive_coords[1]
-  #   self.depart_lat   = get_depart_coords[0]
-  #   self.depart_long  = get_depart_coords[1]
-  #   self.save
-  # end
-
   # # Used for map
   def get_arrive_coords
     result = Geocoder.search(self.airfield_arrive).first
-    # [result.latitude, result.longitude] if result.present?
     if result.present?
       self.arrive_lat = result.latitude
       self.arrive_long = result.longitude
@@ -49,19 +40,9 @@ class Voyage < ActiveRecord::Base
 # # Used for map
   def get_depart_coords
     result = Geocoder.search(self.airfield_depart).first
-    # [result.latitude, result.longitude] if result.present?
      if result.present?
       self.depart_lat = result.latitude
       self.depart_long = result.longitude
-    end
+     end
   end
-
-
-  #   # Used for map
-  # def get_coords(location)
-  #   result = Geocoder.search(location).first
-  #   [result.latitude, result.longitude] if result.present?
-  # end
-
-
 end
