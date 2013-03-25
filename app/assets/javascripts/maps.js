@@ -8,9 +8,27 @@ function display_map(lat, lon, zoom, canvas) {
   latlng = new google.maps.LatLng(lat, lon);
   bounds = new google.maps.LatLngBounds();
 
+  // styled object to give the maps that 'old-timey feel'
+  var styles = [ {
+    "elementType":"geometry",
+    "stylers": [
+      { "gamma": 1.09 },
+      { "hue": "#ff6e00" },
+      { "saturation": -39 },
+      { "lightness": -05 },
+      { "weight": 1.3 }
+      ]
+    }
+  ];
+
+
+  var styledMap = new google.maps.StyledMapType(styles, {name: 'Styled Map'});
+
   var mapOptions = {
     center: latlng,
     zoom: zoom,
+    disableDefaultUI: true,
+    panControl: false,
     zoomControl: false,
     scaleControl: false,
     mapTypeControl: false,
@@ -19,6 +37,7 @@ function display_map(lat, lon, zoom, canvas) {
   };
 
   map = new google.maps.Map(canvas, mapOptions);
+  map.setOptions({styles: styles});
  }
 
 // used to add both arrival and destination markers

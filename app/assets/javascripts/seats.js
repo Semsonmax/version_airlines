@@ -17,7 +17,7 @@ function mark_occupied_seat(element, index, list)
     if ($(element).data('user-occupied') == true)
     {
       $(element).removeClass('gray');
-      $(element).addClass('blue');
+      $(element).addClass('seat_avatar');
     }
   }
   if ($(element).data('row') == $(element).next().data('row'))
