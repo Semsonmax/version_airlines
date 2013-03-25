@@ -5,7 +5,7 @@ class TravelersController < ApplicationController
 
   def create
     @traveler = Traveler.create(params[:traveler])
-    redirect_to(root_path)
+    redirect_to(voyages_path)
   end
 
   def show
