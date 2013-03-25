@@ -11,7 +11,7 @@ class VoyagesController < ApplicationController
     @zeppelins = Zeppelin.all
   end
   def create
-    voyage = Voyage.create(params[:voyage])
+    @voyage = Voyage.create(params[:voyage])
     @voyages = Voyage.all
   end
 

@@ -1,2 +1,7 @@
-$('#form').empty();
-$('#voyages').empty().append("<%=j render :partial=>'voyages'%>");
+<% if @voyage.valid? %>
+  $('#form').empty();
+  $('#voyages').empty().append("<%=j render :partial=>'voyages'%>");
+<% else %>
+  $('#form').empty().append("<%=j render :partial=>'form' %>");
+<% end %>
+

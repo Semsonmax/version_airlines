@@ -23,6 +23,7 @@ class Voyage < ActiveRecord::Base
   has_many :seats, :through => :bookings
   has_many :travelers, :through => :bookings
   validates :zeppelin_id, :presence => true
+  validates :code, :airfield_depart, :airfield_arrive, :voyage_date, :presence=>true
 
   before_save :get_arrive_coords
   before_save :get_depart_coords
