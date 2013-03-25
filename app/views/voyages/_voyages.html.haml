@@ -16,7 +16,7 @@
           .button.small.success.white= link_to 'BOOK NOW', voyage
         %td= voyage.airfield_depart
         %td= voyage.airfield_arrive
-        %td= voyage.voyage_date
+        %td= voyage.voyage_date.strftime('%B %d, %Y')
         %td= voyage.zeppelin.name
         %td
           %div{:id=>"map_canvas_#{i}", :class=>'map_canvas'}
