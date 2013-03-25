@@ -12,4 +12,4 @@
 //= require 'jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js'
 //= require 'maps.js'
 //= require 'seats.js'
-//= require dataTables/jquery.dataTables
+//= require 'dataTables/jquery.dataTables'
