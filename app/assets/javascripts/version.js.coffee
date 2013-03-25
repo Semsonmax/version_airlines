@@ -24,6 +24,10 @@ class Version
       $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
       $('form').children().last().removeClass('disabled').attr('disabled',false);
     if $(this).data('occupied') != false
+      if $(this).is('.blue')
+        $(this).addClass('blue')
+      else
+        $(this).addClass('blue')
       $('#purchase_line').addClass('alert-box alert').append().text("You have selected a seat that is taken!")
       $('form').children().last().addClass('disabled').attr('disabled','disabled');
     seat_id = $(this).data('id')
