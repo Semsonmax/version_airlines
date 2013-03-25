@@ -15,7 +15,7 @@ v3 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'Tokyo',
 v4 = Voyage.create(zeppelin_id: z1.id, code: 'TS0601', airfield_depart: 'Mexico City', airfield_arrive: 'Seattle', voyage_date: '1900-07-01')
 v5 = Voyage.create(zeppelin_id: z2.id, code: 'TS0601', airfield_depart: 'Hong Kong', airfield_arrive: 'New York', voyage_date: '1900-08-01')
 v6 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'New York, NY', airfield_arrive: 'Amsterdam, Netherlands', voyage_date: '1900-09-01')
-v7 = Voyage.create(zeppelin_id: z1.id, code: 'TS0601', airfield_depart: 'Santiago', airfield_arrive: 'New York', voyage_date: '1900-10-01')
+v7 = Voyage.create(zeppelin_id: z1.id, code: 'TS0601', airfield_depart: 'Santiago, Chile', airfield_arrive: 'New York', voyage_date: '1900-10-01')
 v8 = Voyage.create(zeppelin_id: z2.id, code: 'TS0601', airfield_depart: 'Mumbai, India', airfield_arrive: 'New York', voyage_date: '1900-12-01')
 
 
