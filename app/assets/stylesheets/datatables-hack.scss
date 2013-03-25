@@ -1,19 +1,23 @@
 table.dataTable tr.odd
 {
-  background-color: #CCC;
+  background: url('https://dl.dropbox.com/u/5433755/ZEPPELIN/dtbg1.png') repeat-x;
 }
 
 table.dataTable tr.odd td.sorting_1
 {
-  background-color: #555;
+  background-color: #AAA;
+  opacity: 0.9;
+  -webkit-filter: invert(1);
 }
 
 table.dataTable tr.even
 {
-  background-color: #999;
+  background: url('https://dl.dropbox.com/u/5433755/ZEPPELIN/grey_wash_wall.png') repeat-x;
 }
 
 table.dataTable tr.even td.sorting_1
 {
-  background-color: #333;
+  background-color: #CCC;
+  opacity: 0.9;
+  -webkit-filter: invert(1);
 }
