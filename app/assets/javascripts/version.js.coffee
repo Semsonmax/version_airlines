@@ -12,7 +12,10 @@ class Version
 
   @get_seat_id: ->
     row = $(this).data('row')
-    column = $(this).data('column')
+    n = $(this).data('column')
+    n = n - 1
+    chr = String.fromCharCode(97 + n)
+    column = chr.toUpperCase()
     if $(this).is('.blue')
       $(this).removeClass('blue')
       $('#purchase_line').addClass('alert-box alert').text("You have not selected a seat to purchase")
@@ -21,7 +24,7 @@ class Version
       $(this).addClass('blue')
       clear_seat_colors()
       $(this).addClass('blue')
-      $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
+      $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{column} - #{row}.")
       $('form').children().last().removeClass('disabled').attr('disabled',false);
     if $(this).data('occupied') != false
       if $(this).is('.blue')
