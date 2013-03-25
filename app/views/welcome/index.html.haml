@@ -8,25 +8,25 @@
       %span.hsjs.title Von Zeppelin&#146;s
       %span.hsjs.title super elegant
       %span.hsjs.title perfectly safe
-      %span.hsjs.title{:style => "margin-bottom: -20px;"} ZEPPELIN
-      %span.hsjs.title VOYAGES
+      %span.hsjs.title{:style => "font-weight: bold;"} ZEPPELIN
+      %span.hsjs.title{:style => "font-weight: bold;"} VOYAGES
   .large-6.columns
     #form
 
-/ %script{:charset => "utf-8", :type => "text/javascript"}
-/   $(window).load(function(){
-/   $('.splash').fadeIn('slow', function() {});
-/   $().hatchShow();
-/   });
-/   jQuery.fn.hatchShow = function(){
-/   $('.hsjs').css('display','inner-block').css('white-space','pre').each(function(){
-/   var t = $(this);
-/   t.wrap("<span class='hatchshow_temp' style='display:block'>");
-/   var pw = t.parent().width();
-/   while( t.width() < pw ){t.css('font-size', (t.fontSize()+1)+"px"),
-/   function(){while( t.width() > pw ){t.css('font-size', (t.fontSize()-.1)+"px")}};
-/   };
-/   }).css('visibility','visible');
-/   };
-/   jQuery.fn.fontSize = function(){return parseInt($(this).css('font-size').replace('px',''));};
+%script{:charset => "utf-8", :type => "text/javascript"}
+  $(window).load(function(){
+  $('.splash').fadeIn('slow', function() {});
+  $().hatchShow();
+  });
+  jQuery.fn.hatchShow = function(){
+  $('.hsjs').css('display','inner-block').css('white-space','pre').each(function(){
+  var t = $(this);
+  t.wrap("<span class='hatchshow_temp' style='display:block'>");
+  var pw = t.parent().width();
+  while( t.width() < pw ){t.css('font-size', (t.fontSize()+1)+"px"),
+  function(){while( t.width() > pw ){t.css('font-size', (t.fontSize()-.1)+"px")}};
+  };
+  }).css('visibility','visible');
+  };
+  jQuery.fn.fontSize = function(){return parseInt($(this).css('font-size').replace('px',''));};
 
