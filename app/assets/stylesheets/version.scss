@@ -8,9 +8,9 @@
 }
 /* GENERAL TYPOGRAPHY PRESETS */
 
-* { letter-spacing: -0.03em; }
 
-h1, h2, h3, h4, .title { font-family: 'Chango'; }
+
+h1, h2, h3, h4, .title { font-family: 'Alfa Slab One'; }
 // p, label, input { font-family: Georgia;}
 
 a {
@@ -150,6 +150,7 @@ label{
 /* FONTS CODE */
 
 @import url(http://fonts.googleapis.com/css?family=Chango);
+
 
 /* Regular */
 @font-face {
