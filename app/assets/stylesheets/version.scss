@@ -8,13 +8,13 @@
 }
 /* GENERAL TYPOGRAPHY PRESETS */
 
-* { letter-spacing: -0.03em; }
 
-h1, h2, h3, h4, .title { font-family: 'Chango'; }
-// p, label, input { font-family: Georgia;}
+*, h1, h2, h3, h4, .title { font-family: "futura-pt"; }
+p, label, input { font-family: "futura-pt";}
 
 a {
   color: white;
+  font-family: "futura-pt";
 }
 /* END */
 
@@ -170,7 +170,6 @@ label{
 
 /* FONTS CODE */
 
-@import url(http://fonts.googleapis.com/css?family=Chango);
 
 /* Regular */
 @font-face {
