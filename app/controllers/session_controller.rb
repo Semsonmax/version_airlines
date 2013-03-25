@@ -12,6 +12,7 @@ class SessionController < ApplicationController
       session[:traveler_id] = @auth.id
     else
       session[:traveler_id] = nil
+      flash[:notice] = "Incorrect login. Please try again."
     end
     authenticate
   end

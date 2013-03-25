@@ -23,7 +23,7 @@ describe 'Voyages' do
     it 'displays all voyages', :js=>true do
       login_to_system(admin)
       click_link('Voyages')
-      page.should have_text('Clipper Class')
+      page.should have_text('New York')
     end
   end
 
@@ -32,7 +32,7 @@ describe 'Voyages' do
       login_to_system(admin)
       click_link('Voyages')
       click_link('New Voyage')
-      page.should have_button('Create Voyage')
+      page.should have_button('AWAY WE GO')
       end
   end
 
