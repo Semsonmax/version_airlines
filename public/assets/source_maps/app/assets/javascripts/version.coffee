@@ -16,7 +16,7 @@ class Version
     if $(this).is('.blue')
       $(this).removeClass('blue')
       $('#purchase_line').addClass('alert-box alert').text("You have not selected a seat to purchase")
-      $('form').children().last().removeClass('disabled').attr('disabled',false);
+      $('form').children().last().addClass('disabled').attr('disabled','disabled');
     else
       $(this).addClass('blue')
       clear_seat_colors()
