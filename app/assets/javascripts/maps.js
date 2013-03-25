@@ -11,6 +11,8 @@ function display_map(lat, lon, zoom, canvas) {
   var mapOptions = {
     center: latlng,
     zoom: zoom,
+    disableDefaultUI: true,
+    panControl: false,
     zoomControl: false,
     scaleControl: false,
     mapTypeControl: false,
