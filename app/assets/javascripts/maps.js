@@ -14,8 +14,8 @@ function display_map(lat, lon, zoom, canvas) {
     "stylers": [
       { "gamma": 0.98 },
       { "hue": "#ff9100" },
-      { "saturation": -36 },
-      { "lightness": -22 },
+      { "saturation": -54 },
+      { "lightness": -8 },
       { "weight": 1.4 }
       ]
     }
