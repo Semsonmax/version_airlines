@@ -20,3 +20,11 @@
       = @voyage.airfield_arrive
       %br
       = image_tag(@voyage.zeppelin.image)
+      .white= @voyage.zeppelin.description
+      %ul
+        %li.white
+          Engine type:
+          = @voyage.zeppelin.engines
+        %li.white
+          Year built:
+          = @voyage.zeppelin.year_built
