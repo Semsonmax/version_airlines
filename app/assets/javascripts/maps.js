@@ -15,7 +15,7 @@ function display_map(lat, lon, zoom, canvas) {
       { "gamma": 1.09 },
       { "hue": "#ff6e00" },
       { "saturation": -39 },
-      { "lightness": -11 },
+      { "lightness": -05 },
       { "weight": 1.3 }
       ]
     }
