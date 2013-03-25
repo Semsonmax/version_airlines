@@ -16,7 +16,7 @@ class Version
     if $(this).is('.blue')
       $(this).removeClass('blue')
       $('#purchase_line').addClass('alert-box alert').text("You have not selected a seat to purchase")
-      $('form').children().last().removeClass('disabled').attr('disabled',false);
+      $('form').children().last().addClass('disabled').attr('disabled','disabled');
     else
       $(this).addClass('blue')
       clear_seat_colors()
@@ -25,10 +25,8 @@ class Version
       $('form').children().last().removeClass('disabled').attr('disabled',false);
     if $(this).data('occupied') != false
       if $(this).is('.blue')
-        console.log('Show blue')
         $(this).addClass('blue')
       else
-        console.log('Show gray')
         $(this).addClass('blue')
       $('#purchase_line').addClass('alert-box alert').append().text("You have selected a seat that is taken!")
       $('form').children().last().addClass('disabled').attr('disabled','disabled');
