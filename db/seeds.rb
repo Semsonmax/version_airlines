@@ -4,7 +4,7 @@ Seat.delete_all
 Zeppelin.delete_all
 Booking.delete_all
 
-z1 = Zeppelin.create(name: 'The Lord Grantham', style: 'Victoria Class', number_of_rows: 5, number_of_columns: 4, description: 'Our flagship vessel, it has not exploded in over 34 yers of service', engines: '4 diesel', image: 'zep1.jpg', year_built: 1911)
+z1 = Zeppelin.create(name: 'The Lord Grantham', style: 'Victoria Class', number_of_rows: 5, number_of_columns: 4, description: 'Our flagship vessel, it has not exploded in over 34 years of service', engines: '4 diesel', image: 'zep1.jpg', year_built: 1911)
 z2 = Zeppelin.create(name: 'The Admiral Nelson', style: 'Wellington Class', number_of_rows: 6, number_of_columns: 2, description: 'The Nelson is our pride and joy with over 2400 voyages without a cigarette incident', engines: '2 steam', image: 'zep2.jpg', year_built: 1919)
 z3 = Zeppelin.create(name: 'The Royal Ulsterman', style: 'Clipper Class', number_of_rows: 4, number_of_columns: 2, description: 'Queen Victoria herself christened this vessel, and it has been a steadfast flying machine', engines: '6 diesel', image: 'zep3.jpg', year_built: 1920)
 z4 = Zeppelin.create(name: 'HMS Buttercup', style: 'Victoria Class', number_of_rows: 5, number_of_columns: 2, description: 'Crowned as 1914s Zep-o-the-year, this beauty can make a transatlantic voyage in just a mere 3 weeks', engines: '2 diesel', image: 'zep4.jpg', year_built: 1914)
