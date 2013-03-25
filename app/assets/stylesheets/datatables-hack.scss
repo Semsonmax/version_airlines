@@ -1,0 +1,19 @@
+table.dataTable tr.odd
+{
+  background-color: #333;
+}
+
+table.dataTable tr.odd td.sorting_1
+{
+  background-color: green;
+}
+
+table.dataTable tr.even
+{
+  background-color: white;
+}
+
+table.dataTable tr.even td.sorting_1
+{
+  background-color: blue;
+}
