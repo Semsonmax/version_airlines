@@ -101,7 +101,11 @@ body {
   background-size: cover;
 }
 
-
+/* Avatar for an occupied seat */
+.seat_avatar
+{
+  background-image: url('pipe.jpg');
+}
 
 .seat_column
 {
