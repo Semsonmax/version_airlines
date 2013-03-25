@@ -2,7 +2,21 @@
 .row
   .large-12.large-centered.spacer
 
-.row
-  .large-12.large-centered.columns.bg
+.row.bg
+  .large-6.columns
     #chart
       = render :partial => 'seatchart'
+  .large-6.columns
+    %h3.white
+      Voyage Information
+
+    %h5
+      = @voyage.zeppelin.name
+      %br
+      .white From:
+      = @voyage.airfield_depart
+      %br
+      .white To:
+      = @voyage.airfield_arrive
+      %br
+      = image_tag(@voyage.zeppelin.image)
