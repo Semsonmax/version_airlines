@@ -15,7 +15,7 @@
           - @voyage.zeppelin.seats.each do |seat|
             .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.present? ? seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name : 'Open' }"}
               .seat_numbers
-                = "#{seat.row} - #{seat.column}"
+                = "#{seat.convert_column_to_letter} - #{seat.row}"
                 / - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
                 /   = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
                 / - else

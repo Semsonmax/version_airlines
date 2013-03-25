@@ -18,4 +18,9 @@ class Seat < ActiveRecord::Base
   has_many :travelers, :through => :bookings
 
   validates :zeppelin_id, :presence => true
+
+  def convert_column_to_letter
+    test = self.column - 1
+    test.to_i.to_s(27).tr("0-9a-q", "A-Z")
+  end
 end
