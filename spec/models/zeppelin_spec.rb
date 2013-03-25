@@ -10,10 +10,11 @@
 #  updated_at        :datetime         not null
 #  name              :string(255)
 #  description       :text
-#  image             :string(255)
+#  image             :string(255)      default("zep1.jpg")
 #  engines           :text
 #  year_built        :integer
 #
+
 
 require 'spec_helper'
 
