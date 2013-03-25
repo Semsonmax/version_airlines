@@ -11,7 +11,7 @@ class VoyagesController < ApplicationController
     @zeppelins = Zeppelin.all
   end
   def create
-    voyage = Voyage.create(params[:voyage])
+    @voyage = Voyage.create(params[:voyage])
     @zeppelins = Zeppelin.order(:name)
     @voyages = Voyage.order(:voyage_date)
   end
