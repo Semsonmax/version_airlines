@@ -13,7 +13,7 @@
     - @voyages.each do |voyage|
       %tr
         %td
-          .button.small.success.white= link_to 'BOOK NOW', voyage
+          .button.small.ticket_background= link_to('BOOK NOW', voyage, :class => 'gray-text')
         %td= voyage.airfield_depart
         %td= voyage.airfield_arrive
         %td= voyage.voyage_date.strftime('%B %d, %Y')
