@@ -5,5 +5,13 @@ class TravelersController < ApplicationController
 
   def create
     @traveler = Traveler.create(params[:traveler])
+    redirect_to(root_path)
+  end
+
+  def show
+    @traveler = Traveler.find(params[:id])
+    #binding.pry
+    #make sure page does not show if booking is nil
+    #fix so traveler only sees his own ticket
   end
 end
