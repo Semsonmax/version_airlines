@@ -11,18 +11,18 @@ class Version
     $('.new_button').show()
 
   @get_seat_id: ->
+    row = $(this).data('row')
+    column = $(this).data('column')
     if $(this).is('.blue')
       $(this).removeClass('blue')
-      $('#purchase_line').removeClass('alert-box alert').empty()
+      $('#purchase_line').addClass('alert-box alert').text("You have not selected a seat to purchase")
     else
       $(this).addClass('blue')
       clear_seat_colors()
       $(this).addClass('blue')
-    row = $(this).data('row')
-    column = $(this).data('column')
+      $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
     seat_id = $(this).data('id')
     $('#seat_id').val(seat_id)
-    $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
 
   @empty_after_fade: ->
     $('#form').empty()
