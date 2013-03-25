@@ -12,11 +12,11 @@ function display_map(lat, lon, zoom, canvas) {
   var styles = [ {
     "elementType":"geometry",
     "stylers": [
-      { "gamma": 1.09 },
-      { "hue": "#ff6e00" },
-      { "saturation": -39 },
-      { "lightness": -05 },
-      { "weight": 1.3 }
+      { "gamma": 0.98 },
+      { "hue": "#ff9100" },
+      { "saturation": -36 },
+      { "lightness": -22 },
+      { "weight": 1.4 }
       ]
     }
   ];
