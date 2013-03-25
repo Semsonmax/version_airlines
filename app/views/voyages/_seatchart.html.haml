@@ -3,8 +3,9 @@
 .row.white
 
   - if flash[:message].present?
-    .large-12.large-centered.columns.alert-box.alert
+    .large-8.columns.alert-box.alert
       = flash[:message]
+    .large-4.columns
 
   .large-12.large-centered.columns
     #seatchart
