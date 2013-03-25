@@ -17,7 +17,14 @@ function display_map(lat, lon, zoom, canvas) {
     scaleControl: false,
     mapTypeControl: false,
     streetViewControl: false,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    "stylers": [
+      { "gamma": 1.09 },
+      { "hue": "#ff6e00" },
+      { "saturation": -63 },
+      { "lightness": -19 },
+      { "weight": 1.3 }
+    ]
   };
 
   map = new google.maps.Map(canvas, mapOptions);
