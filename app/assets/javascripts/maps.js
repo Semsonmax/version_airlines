@@ -1,3 +1,7 @@
+$(function() {
+  $('#voyage_voyage_date').datepicker();
+});
+
 // Used for maps
 var markers = [];
 var map;

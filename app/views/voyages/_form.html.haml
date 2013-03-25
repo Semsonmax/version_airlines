@@ -13,7 +13,7 @@
             = f.text_field  :airfield_arrive, :placeholder=>'Airfield Arrival'
         .row
           .large-4.columns
-            = f.text_field  :voyage_date, :placeholder=>'Voyage Date'
+            = f.text_field  :voyage_date, :dateformat=>'YYYY-MM-DD', :placeholder=>'Voyage Date'
             = f.label         :zeppelins
           .large-8.columns
             = f.select        :zeppelin_id, options_for_select(Zeppelin.all.map {|zep| ["#{zep.name} -- #{zep.style} -- #{zep.total_seats} seats available", zep.id] })
@@ -22,5 +22,6 @@
             = link_to('NAH', '#', :'data-clear-form' => true, :class => 'button round alert')
             = f.submit 'AWAY WE GO', :class => 'button round'
           .large-6.columns
+%script
 
 

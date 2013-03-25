@@ -4,7 +4,7 @@ class VoyagesController < ApplicationController
   def index
     @voyage = Voyage.new
     @zeppelins = Zeppelin.order(:name)
-    @voyages = Voyage.order(:voyage_date)
+    @voyages = Voyage.order('voyage_date').reverse
   end
   def new
     @voyage = Voyage.new
@@ -13,7 +13,7 @@ class VoyagesController < ApplicationController
   def create
     @voyage = Voyage.create(params[:voyage])
     @zeppelins = Zeppelin.order(:name)
-    @voyages = Voyage.order(:voyage_date)
+    @voyages = Voyage.order('voyage_date').reverse
   end
 
   def show
