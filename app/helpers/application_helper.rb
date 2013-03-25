@@ -21,8 +21,6 @@ module ApplicationHelper
         nav += "<li class='divider'></li>"
         nav += "<li>#{link_to('Find Voyages', voyages_path, :class => 'button tiny')}</li>"
         nav += "<li class='divider'></li>"
-        nav += "<li>#{link_to('My Account', '#', :class => 'button tiny')}</li>"
-        nav += "<li class='divider'></li>"
       end
     else
       nav += "<li>#{link_to('Register', new_traveler_path, :remote => true, :class => 'button tiny')}</li>"

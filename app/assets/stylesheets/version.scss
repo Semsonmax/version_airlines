@@ -79,8 +79,6 @@ table {
   font-size: 1.4em;
 }
 
-
-
 #chart {
 /*  height: 400px;*/
   width: 600px;
@@ -265,6 +263,30 @@ label{
 }
 
 /* Adding tooltips to the seating chart */
+
+#zeppelin_top
+{
+ height: 180px;
+ width: auto;
+ background: url('zeppelin_t.png') no-repeat;
+ background-size: contain;
+  }
+
+#seatchart{
+  // margin-left: 40px;
+  background-color: gray;
+  width: 235px;
+}
+
+#zeppelin_bottom
+{
+ height: 180px;
+ width: auto;
+ background: url('zeppelin_b.png') no-repeat;
+ background-size: contain;
+  }
+
+
 
 .seat_column[data-occupied-name]:link, .seat_column[data-occupied-name]:visited {
     position: relative;

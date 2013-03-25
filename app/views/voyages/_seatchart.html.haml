@@ -7,18 +7,22 @@
       = flash[:message]
     .large-4.columns
 
-  .large-12.large-centered.columns
+  .large-6.columns
+    #zeppelin_top
     #seatchart
-      .seat_row
-        - @voyage.zeppelin.seats.each do |seat|
-          .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.present? ? seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name : 'Open' }"}
-            .seat_numbers
-              = "#{seat.row} - #{seat.column}"
-              / - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
-              /   = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
-              / - else
-              /   = "Open"
-        .clear
+      #gondola
+        .seat_row
+          - @voyage.zeppelin.seats.each do |seat|
+            .seat_column{:'data-row' => "#{seat.row}", :'data-column' => "#{seat.column}", :'data-id' =>"#{seat.id}",:'data-user-occupied' => "#{seat.in?(@auth.seats) ? true : false}", :'data-occupied' => "#{seat.in?(@voyage.seats) ? true : false}", :'data-occupied-name' => "#{seat.bookings.where(:voyage_id => @voyage.id).first.present? ? seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name : 'Open' }"}
+              .seat_numbers
+                = "#{seat.row} - #{seat.column}"
+                / - if seat.bookings.where(:voyage_id => @voyage.id).first.present?
+                /   = "#{seat.bookings.where(:voyage_id => @voyage.id).first.traveler.name}"
+                / - else
+                /   = "Open"
+    #zeppelin_bottom
+      .clear
+  .large-6.columns
 
 .row
   .large-12.large-centered.columns
