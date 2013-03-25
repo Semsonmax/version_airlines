@@ -8,15 +8,15 @@ function display_map(lat, lon, zoom, canvas) {
   latlng = new google.maps.LatLng(lat, lon);
   bounds = new google.maps.LatLngBounds();
 
-  // styled object to give the maps that 'old-timey feel'
+  // styled object to give the maps that 'old-timey' feel
   var styles = [ {
     "elementType":"geometry",
     "stylers": [
-      { "gamma": 1.09 },
-      { "hue": "#ff6e00" },
-      { "saturation": -39 },
-      { "lightness": -05 },
-      { "weight": 1.3 }
+      { "gamma": 0.98 },
+      { "hue": "#ff9100" },
+      { "saturation": -54 },
+      { "lightness": -8 },
+      { "weight": 1.4 }
       ]
     }
   ];
