@@ -12,6 +12,13 @@ z4 = Zeppelin.create(name: 'HMS Buttercup', style: 'Victoria Class', number_of_r
 v1 = Voyage.create(zeppelin_id: z1.id, code: 'BN0401', airfield_depart: 'Berlin', airfield_arrive: 'New York', voyage_date: '1900-04-01')
 v2 = Voyage.create(zeppelin_id: z2.id, code: 'LP0501', airfield_depart: 'London', airfield_arrive: 'Paris', voyage_date: '1900-05-01')
 v3 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'Tokyo', airfield_arrive: 'Seattle', voyage_date: '1900-06-01')
+v4 = Voyage.create(zeppelin_id: z1.id, code: 'TS0601', airfield_depart: 'Mexico City', airfield_arrive: 'Seattle', voyage_date: '1900-07-01')
+v5 = Voyage.create(zeppelin_id: z2.id, code: 'TS0601', airfield_depart: 'Berlin', airfield_arrive: 'Chicago', voyage_date: '1900-08-01')
+v6 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'Paris', airfield_arrive: 'Istanbul', voyage_date: '1900-09-01')
+v7 = Voyage.create(zeppelin_id: z1.id, code: 'TS0601', airfield_depart: 'New York', airfield_arrive: 'Los Angeles', voyage_date: '1900-10-01')
+v8 = Voyage.create(zeppelin_id: z2.id, code: 'TS0601', airfield_depart: 'Los Angeles', airfield_arrive: 'Seattle', voyage_date: '1900-11-01')
+v9 = Voyage.create(zeppelin_id: z3.id, code: 'TS0601', airfield_depart: 'New York', airfield_arrive: 'Denver', voyage_date: '1900-12-01')
+
 
 t1 = Traveler.create(name: 'Winthrop', email: 'winthrop@gmail.com', password: 'a', password_confirmation: 'a')
 t2 = Traveler.create(name: 'Reginald', email: 'reg@gmail.com', password: 'a', password_confirmation: 'a')
