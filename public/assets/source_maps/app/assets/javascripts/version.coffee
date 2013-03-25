@@ -16,11 +16,16 @@ class Version
     if $(this).is('.blue')
       $(this).removeClass('blue')
       $('#purchase_line').addClass('alert-box alert').text("You have not selected a seat to purchase")
+      $('form').children().last().removeClass('disabled').attr('disabled',false);
     else
       $(this).addClass('blue')
       clear_seat_colors()
       $(this).addClass('blue')
       $('#purchase_line').addClass('alert-box alert').append().text("You have selected #{row} - #{column}.")
+      $('form').children().last().removeClass('disabled').attr('disabled',false);
+    if $(this).data('occupied') != false
+      $('#purchase_line').addClass('alert-box alert').append().text("You have selected a seat that is taken!")
+      $('form').children().last().addClass('disabled').attr('disabled','disabled');
     seat_id = $(this).data('id')
     $('#seat_id').val(seat_id)
 
