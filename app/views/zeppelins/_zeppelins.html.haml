@@ -4,6 +4,7 @@
     %ul
       - @zeppelins.each do |zeppelin|
         %h4.li.white= zeppelin.name
+        %li= zeppelin.description
         %table.admin
           - zeppelin.number_of_columns.times do
             %tr.admin
