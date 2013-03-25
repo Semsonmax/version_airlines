@@ -3,10 +3,21 @@
     %h1.white Our Zeppelin Fleet:
     %ul
       - @zeppelins.each do |zeppelin|
-        %h4.li.white= zeppelin.name
-        %li= zeppelin.description
+        %h3.li.white= zeppelin.name
+        %li.white= zeppelin.description
+        %li.white
+          Engine type:
+          = zeppelin.engines
+        %li.white
+          Year built:
+          = zeppelin.year_built
         %table.admin
+          .white Seat Configuration
           - zeppelin.number_of_columns.times do
             %tr.admin
               - zeppelin.number_of_rows.times do
                 %td.admin
+        %h3.li.white
+          Image
+          = image_tag(zeppelin.image)
+        %hr
