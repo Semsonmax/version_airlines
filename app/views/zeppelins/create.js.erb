@@ -1,3 +1,9 @@
-$('.new_button').addClass('disabled');
-$('#show').empty().append('<%=j render(:partial => 'zeppelins') %>');
-$('#form').empty();
+<% if @zeppelin.valid? %>
+  $('.new_button').addClass('disabled');
+  $('.new_button').show();
+  $('#show').empty().append('<%=j render(:partial => 'zeppelins') %>');
+  $('#form').empty();
+<% else %>
+  $('#form').empty().append("<%=j render :partial=>'form' %>");
+<% end %>
+

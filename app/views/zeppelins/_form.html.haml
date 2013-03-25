@@ -1,6 +1,7 @@
 .row
   .large-6.columns.bg
     %h2.white New Zeppelin
+    = render(:partial => 'shared/errors', :locals=>{:object=>@zeppelin})
     = form_for @zeppelin, :remote => true do |f|
       = f.text_field :name, :autofocus => true, :placeholder => 'Zeppelin Name'
       = f.text_field :style, :placeholder => 'Zeppelin class'
