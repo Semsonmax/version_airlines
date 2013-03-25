@@ -30,6 +30,27 @@ a {
 
 /* END */
 
+/* traveler show page */
+
+#ticket{
+  background-color: GhostWhite;
+  border: 1px solid black;
+}
+
+#ticket p, h4{
+  text-align: center;
+}
+
+#trip_canvas{
+  height: 500px;
+  margin-left: 15%;
+  margin-bottom: 50px;
+  border: 2px solid black;
+}
+
+/* end traveler show page */
+
+
 
 .zeppname{
   font-family: 'UnifrakturCook', cursive;
@@ -270,4 +291,7 @@ label{
 {
 
 }
-
+.login_alert {
+  background: rgb(183,0,6);
+  padding: 5px;
+}

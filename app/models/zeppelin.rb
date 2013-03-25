@@ -1,5 +1,22 @@
+# == Schema Information
+#
+# Table name: zeppelins
+#
+#  id                :integer          not null, primary key
+#  style             :string(255)
+#  number_of_rows    :integer
+#  number_of_columns :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  name              :string(255)
+#  description       :text
+#  image             :string(255)
+#  engines           :text
+#  year_built        :integer
+#
+
 class Zeppelin < ActiveRecord::Base
-  attr_accessible :name, :style, :number_of_rows, :number_of_columns
+  attr_accessible :name, :style, :number_of_rows, :number_of_columns, :description, :image, :engines, :year_built
   has_many :seats, :inverse_of => :zeppelin
   has_many :voyages, :inverse_of => :zeppelin
   validates :number_of_rows, :number_of_columns, :name, :style, :presence => true

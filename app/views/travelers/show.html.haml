@@ -1,0 +1,26 @@
+%script
+  var airfields = [];
+  / display_current_trip(40.7316, -73.9901, 12);
+
+.row
+  .large-12.large-centered.spacer
+
+.row
+  .large-4.columns
+    #ticket
+      = image_tag('ZepTicket.jpg')
+      %br
+      %h4= 'von Zeppelin Airways'
+      %p= 'Traveler Name: ' + "#{@auth.name}"
+      %p= 'Airship: ' + "#{@auth.bookings.first.voyage.zeppelin.name}"
+      %p= 'Flight: ' + "#{@auth.bookings.first.voyage.code}" + ' || Seat: ' + "#{@auth.bookings.first.seat.row}" + "-" + "#{@auth.bookings.first.seat.column}"
+      %p= 'Leaving: ' + "#{@auth.bookings.first.voyage.airfield_depart}" + ' || Arrival: ' + "#{@auth.bookings.first.voyage.airfield_arrive}"
+      %p= 'Date: ' + "#{@auth.bookings.first.voyage.voyage_date}"
+
+  .large-8.columns
+    / #trip_canvas
+    /   %script
+    /     = "airfields.push({title: '#{@auth.bookings.first.voyage.airfield_depart}', latitude: #{@auth.bookings.first.voyage.depart_lat}, longitude: #{@auth.bookings.first.voyage.depart_long}});"
+
+    /     = "airfields.push({title: '#{@auth.bookings.first.voyage.airfield_arrive}', latitude: #{@auth.bookings.first.voyage.arrive_lat}, longitude: #{@auth.bookings.first.voyage.arrive_long}});"
+
