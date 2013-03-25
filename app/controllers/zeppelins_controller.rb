@@ -5,6 +5,7 @@ class ZeppelinsController < ApplicationController
   end
 
   def new
+    @zeppelins = Zeppelin.order(:name)
     @zeppelin = Zeppelin.new
   end
 
