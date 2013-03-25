@@ -20,6 +20,14 @@ function mark_occupied_seat(element, index, list)
       $(element).addClass('blue');
     }
   }
+  if ($(element).data('row') == $(element).next().data('row'))
+  {
+
+  }
+  else
+  {
+    $(element).after('<div class="display-block"> </div>');
+  }
 }
 
 function clear_seat_colors()
