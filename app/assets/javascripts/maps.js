@@ -10,15 +10,17 @@ function display_map(lat, lon, zoom, canvas) {
 
   // styled object to give the maps that 'old-timey feel'
   var styles = [ {
+    "elementType":"geometry",
     "stylers": [
       { "gamma": 1.09 },
       { "hue": "#ff6e00" },
-      { "saturation": -63 },
-      { "lightness": -19 },
+      { "saturation": -39 },
+      { "lightness": -11 },
       { "weight": 1.3 }
       ]
     }
   ];
+
 
   var styledMap = new google.maps.StyledMapType(styles, {name: 'Styled Map'});
 

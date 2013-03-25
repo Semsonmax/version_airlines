@@ -243,10 +243,11 @@ label{
   }
 }
 
-
+/* styling for the google maps */
 .map_canvas {
   width: 200px;
   height: 200px;
+  box-shadow: 3px 3px 3px #aaa;
 }
 
 /* Adding tooltips to the seating chart */
