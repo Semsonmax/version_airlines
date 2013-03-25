@@ -247,6 +247,17 @@ label{
 
 /* Adding tooltips to the seating chart */
 
+#zeppelin_top
+{
+ height: 40px;
+ width: auto;
+ background: url('zeppelin_top.png') no-repeat;
+ background-size: contain;
+ border: 1px solid red;
+  }
+
+
+
 .seat_column[data-occupied-name]:link, .seat_column[data-occupied-name]:visited {
     position: relative;
     text-decoration: none;
