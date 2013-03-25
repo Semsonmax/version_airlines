@@ -8,7 +8,7 @@ function display_map(lat, lon, zoom, canvas) {
   latlng = new google.maps.LatLng(lat, lon);
   bounds = new google.maps.LatLngBounds();
 
-  // styled object to give the maps that 'old-timey feel'
+  // styled object to give the maps that 'old-timey' feel
   var styles = [ {
     "elementType":"geometry",
     "stylers": [
