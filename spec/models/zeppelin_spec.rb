@@ -9,6 +9,10 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  name              :string(255)
+#  description       :text
+#  image             :string(255)
+#  engines           :text
+#  year_built        :integer
 #
 
 require 'spec_helper'
@@ -28,24 +32,24 @@ describe Zeppelin do
 
   describe '.create' do
     it 'creates an Zeppelin record in the db' do
-      zep = Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
+      zep = Zeppelin.create(:name=>'Big Bertha',:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
       expect(zep.id).to_not be nil
     end
   end
 
   describe '#create_seats' do
     it 'creates seats' do
-      zep = Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
+      zep = Zeppelin.create(:name=>'Big Bertha', :style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
       expect(zep.seats).to_not eq nil
     end
 
     it 'verifies correct number of seats indicated by Zeppelin object' do
-      zep = Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
+      zep = Zeppelin.create(:name=>'Big Bertha',:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
       expect(zep.seats.count).to eq(zep.number_of_rows * zep.number_of_columns)
     end
 
     it 'has an array of Seat objects' do
-      zep = Zeppelin.create(:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
+      zep = Zeppelin.create(:name=>'Big Bertha',:style=>'Small', :number_of_rows=>5, :number_of_columns=>2)
       expect(zep.seats.first).to be_an_instance_of(Seat)
     end
   end

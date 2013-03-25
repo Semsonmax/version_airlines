@@ -10,10 +10,10 @@
 #  zeppelin_id     :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  arrive_lat      :float
-#  arrive_long     :float
-#  depart_lat      :float
-#  depart_long     :float
+#  arrive_lat      :float            default(0.0)
+#  arrive_long     :float            default(0.0)
+#  depart_lat      :float            default(0.0)
+#  depart_long     :float            default(0.0)
 #
 
 class Voyage < ActiveRecord::Base
@@ -23,7 +23,7 @@ class Voyage < ActiveRecord::Base
   has_many :seats, :through => :bookings
   has_many :travelers, :through => :bookings
   validates :zeppelin_id, :presence => true
-  validates :code, :airfield_depart, :airfield_arrive, :voyage_date, :presence=>true
+  # validates :code, :airfield_depart, :airfield_arrive, :voyage_date, :presence=>true
 
   before_save :get_arrive_coords
   before_save :get_depart_coords

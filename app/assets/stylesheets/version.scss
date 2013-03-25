@@ -8,13 +8,13 @@
 }
 /* GENERAL TYPOGRAPHY PRESETS */
 
-* { letter-spacing: -0.03em; }
 
-h1, h2, h3, h4, .title { font-family: 'Chango'; }
-// p, label, input { font-family: Georgia;}
+*, h1, h2, h3, h4, .title { font-family: "futura-pt"; }
+p, label, input { font-family: "futura-pt";}
 
 a {
   color: white;
+  font-family: "futura-pt";
 }
 /* END */
 
@@ -29,6 +29,27 @@ a {
 }
 
 /* END */
+
+/* traveler show page */
+
+#ticket{
+  background-color: GhostWhite;
+  border: 1px solid black;
+}
+
+#ticket p, h4{
+  text-align: center;
+}
+
+#trip_canvas{
+  height: 500px;
+  margin-left: 15%;
+  margin-bottom: 50px;
+  border: 2px solid black;
+}
+
+/* end traveler show page */
+
 
 
 .zeppname{
@@ -149,7 +170,6 @@ label{
 
 /* FONTS CODE */
 
-@import url(http://fonts.googleapis.com/css?family=Chango);
 
 /* Regular */
 @font-face {
@@ -283,3 +303,7 @@ label{
 /* */
 
 
+.login_alert {
+  background: rgb(183,0,6);
+  padding: 5px;
+}

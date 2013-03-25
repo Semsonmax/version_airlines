@@ -9,6 +9,10 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  name              :string(255)
+#  description       :text
+#  image             :string(255)
+#  engines           :text
+#  year_built        :integer
 #
 
 FactoryGirl.define do
